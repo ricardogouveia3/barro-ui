@@ -8,7 +8,8 @@ const meta: Meta<typeof AnimatedButton> = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'A button component with smooth animations and multiple variants for enhanced user interactions.',
+        component:
+          'A button component with smooth animations and multiple variants for enhanced user interactions.',
       },
     },
   },
@@ -65,4 +66,3 @@ export const LongText: Story = {
     variant: 'primary',
   },
 };
-

@@ -9,22 +9,22 @@ interface AnimatedButtonProps {
 }
 
 export const AnimatedButton = ({
-                                 children,
-                                 variant = 'primary',
-                                 onClick,
-                                 disabled,
-                               }: AnimatedButtonProps) => {
+  children,
+  variant = 'primary',
+  onClick,
+  disabled,
+}: AnimatedButtonProps) => {
   const getButtonStyles = () => {
     if (disabled) {
       return 'bg-gray-100 text-gray-400 cursor-not-allowed';
     }
-    
+
     return variant === 'primary'
       ? 'bg-amber-400 text-white hover:bg-amber-700 cursor-pointer'
       : 'border-amber-700 border-2 text-amber-700 hover:bg-amber-700 hover:text-gray-900' +
-      ' cursor-pointer';
+          ' cursor-pointer';
   };
-  
+
   return (
     <motion.button
       className={`px-4 py-2 rounded-lg font-medium transition-colors ${getButtonStyles()}`}

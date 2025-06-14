@@ -4,7 +4,7 @@ import { withoutVitePlugins } from '@storybook/builder-vite';
 const config: StorybookConfig = {
   // Suas stories na pasta lib
   stories: ['../lib/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
-  
+
   // Addons expandidos (mantendo os seus + novos)
   addons: [
     '@storybook/addon-essentials',
@@ -15,42 +15,40 @@ const config: StorybookConfig = {
     '@storybook/addon-backgrounds',
     '@storybook/addon-a11y', // Para acessibilidade
   ],
-  
+
   framework: {
     name: '@storybook/react-vite',
     options: {},
   },
-  
+
   // Core builder (mantendo o seu)
   core: {
     builder: '@storybook/builder-vite',
   },
-  
+
   // Configuração de documentação
   docs: {
     autodocs: 'tag', // Gera docs automaticamente
     defaultName: 'Documentação',
   },
-  
+
   // Configuração específica do TypeScript
   typescript: {
     check: false, // Performance
     reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
       shouldExtractLiteralValuesFromEnum: true,
-      propFilter: (prop) => (
-        prop.parent ? !/node_modules/.test(prop.parent.fileName) : true
-      ),
+      propFilter: (prop) => (prop.parent ? !/node_modules/.test(prop.parent.fileName) : true),
     },
   },
-  
+
   // Sua configuração do Vite (expandida)
   viteFinal: async (config) => {
     const newConfig = {
       ...config,
       plugins: await withoutVitePlugins(config.plugins, ['vite:dts']),
     };
-    
+
     newConfig.optimizeDeps = {
       ...newConfig.optimizeDeps,
       include: [
@@ -61,7 +59,7 @@ const config: StorybookConfig = {
         '@storybook/theming',
       ],
     };
-    
+
     // Configurações adicionais se necessário
     newConfig.resolve = {
       ...newConfig.resolve,
@@ -71,7 +69,7 @@ const config: StorybookConfig = {
         // '@': path.resolve(__dirname, '../lib'),
       },
     };
-    
+
     return newConfig;
   },
 };
