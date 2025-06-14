@@ -11,9 +11,22 @@ const config: StorybookConfig = {
   core: {
     builder: '@storybook/builder-vite',
   },
-  viteFinal: async (config) => ({
-    ...config,
-    plugins: await withoutVitePlugins(config.plugins, ['vite:dts']), // skip dts plugin
-  }),
+  viteFinal: async (config) => {
+    const newConfig = {
+      ...config,
+      plugins: await withoutVitePlugins(config.plugins, ['vite:dts']),
+    };
+    
+    newConfig.optimizeDeps = {
+      ...newConfig.optimizeDeps,
+      include: [
+        ...(newConfig.optimizeDeps?.include || []),
+        'framer-motion',
+      ],
+    };
+    
+    return newConfig;
+  },
 };
+
 export default config;

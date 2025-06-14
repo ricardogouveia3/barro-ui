@@ -1,9 +1,9 @@
 {
-  "name": "vite-react-component-library-starter",
+  "name": "barro-ui",
   "private": true,
-  "version": "0.0.0",
-  "description": "A template for creating React component libraries with Vite, Tailwind, and Storybook.",
-  "author": "rayyamhk",
+  "version": "0.0.1",
+  "description": "A minimalist component library inspired by the raw beauty of Pernambuco's clay art and culture. Build for React with Tailwind CSS.",
+  "author": "ricardogouveia3",
   "license": "MIT",
   "type": "module",
   "files": [
@@ -36,9 +36,21 @@
     "build:lib": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "format": "prettier . --write --ignore-unknown",
-    "prepare": "husky install"
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,css,scss}": [
+      "prettier --write"
+    ]
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@eslint/js": "^9.25.0",
     "@storybook/addon-actions": "^8.5.3",
     "@storybook/addon-essentials": "^8.5.3",
     "@storybook/blocks": "^8.5.3",
@@ -57,15 +69,16 @@
     "@vitejs/plugin-react-swc": "^3.7.2",
     "@vitest/coverage-v8": "^3.0.5",
     "clsx": "^2.1.1",
-    "eslint": "^8.55.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-jest-dom": "^5.1.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "eslint-plugin-storybook": "^0.11.2",
+    "framer-motion": "^12.18.1",
     "husky": "^9.1.7",
     "jsdom": "^26.0.0",
+    "lint-staged": "^16.1.1",
     "prettier": "^3.4.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -79,6 +92,7 @@
   },
   "peerDependencies": {
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "framer-motion": "^11.0.0"
   }
 }

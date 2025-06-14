@@ -1,0 +1,7 @@
+echo "🔍 Running lint-staged..."
+pnpm exec lint-staged
+
+echo "🏗️ Running build..."
+pnpm run build
+
+echo "✅ Pre-push checks passed!"

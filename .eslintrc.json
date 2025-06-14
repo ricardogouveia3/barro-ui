@@ -9,16 +9,18 @@
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
-    "plugin:react/jsx-runtime", // disable all rules conflict with React 17 JSX transform
+    "plugin:react/jsx-runtime",
     "plugin:react-hooks/recommended",
     "plugin:jest-dom/recommended",
     "plugin:storybook/recommended",
-    "prettier" // disable all rules conflict with Prettier
+    "prettier"
   ],
-  "plugins": ["jest-dom"],
+  "plugins": ["jest-dom", "storybook"],
   "parser": "@typescript-eslint/parser",
   "ignorePatterns": ["dist"],
-  "rules": {},
+  "rules": {
+    "storybook/story-exports": "off"
+  },
   "settings": {
     "react": {
       "version": "detect"
