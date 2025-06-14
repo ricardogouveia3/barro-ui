@@ -33,7 +33,7 @@ const meta: Meta<typeof AnimatedButton> = {
       description: 'Whether the button is disabled',
     },
   },
-} satisfies Meta<typeof AnimatedButton>;;
+} satisfies Meta<typeof AnimatedButton>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

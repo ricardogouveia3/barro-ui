@@ -40,4 +40,3 @@ export const AnimatedButton = ({
 };
 
 AnimatedButton.displayName = 'AnimatedButton';
-
