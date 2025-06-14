@@ -34,13 +34,13 @@
     "test:watch": "vitest",
     "build": "storybook build",
     "build:lib": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "pnpm exec eslint . --ext ts,tsx --report-unused-disable-directives",
     "format": "prettier . --write --ignore-unknown",
     "prepare": "husky"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
-      "eslint --fix",
+      "pnpm exec eslint --fix",
       "prettier --write"
     ],
     "*.{json,md,css,scss}": [
