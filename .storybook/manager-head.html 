@@ -1,0 +1,25 @@
+<title>Meu Design System - Storybook</title>
+<meta name="description" content="Design System e biblioteca de componentes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="./favicon.svg">
+<link rel="icon" type="image/png" href="./favicon-32x32.png">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Meu Design System">
+<meta property="og:description" content="Biblioteca de componentes e padrões de design">
+<meta property="og:image" content="./og-image.png">
+<meta property="og:type" content="website">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Meu Design System">
+<meta name="twitter:description" content="Biblioteca de componentes e padrões de design">
+<meta name="twitter:image" content="./og-image.png">
