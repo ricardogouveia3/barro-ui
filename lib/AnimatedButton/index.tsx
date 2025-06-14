@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import type { ReactNode } from 'react';
 
-interface AnimatedButtonProps {
+export interface AnimatedButtonProps {
   children: ReactNode;
   variant?: 'primary' | 'secondary';
   onClick?: () => void;
@@ -38,3 +38,6 @@ export const AnimatedButton = ({
     </motion.button>
   );
 };
+
+AnimatedButton.displayName = 'AnimatedButton';
+
