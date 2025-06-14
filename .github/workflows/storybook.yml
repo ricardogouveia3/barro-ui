@@ -2,10 +2,10 @@ name: Deploy Storybook to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
-  workflow_dispatch:  # Permite execução manual
+    branches: [main]
+  workflow_dispatch: # Permite execução manual
 
 permissions:
   contents: read
@@ -13,7 +13,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: false
 
 jobs:

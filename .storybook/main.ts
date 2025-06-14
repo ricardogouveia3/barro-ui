@@ -16,15 +16,12 @@ const config: StorybookConfig = {
       ...config,
       plugins: await withoutVitePlugins(config.plugins, ['vite:dts']),
     };
-    
+
     newConfig.optimizeDeps = {
       ...newConfig.optimizeDeps,
-      include: [
-        ...(newConfig.optimizeDeps?.include || []),
-        'framer-motion',
-      ],
+      include: [...(newConfig.optimizeDeps?.include || []), 'framer-motion'],
     };
-    
+
     return newConfig;
   },
 };

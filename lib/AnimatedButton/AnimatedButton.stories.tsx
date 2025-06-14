@@ -36,12 +36,8 @@ export const Secondary: Story = {
 export const WithComplexAnimation: Story = {
   render: () => (
     <div className="flex gap-4">
-      <AnimatedButton variant="primary">
-        Hover me!
-      </AnimatedButton>
-      <AnimatedButton variant="secondary">
-        Click me!
-      </AnimatedButton>
+      <AnimatedButton variant="primary">Hover me!</AnimatedButton>
+      <AnimatedButton variant="secondary">Click me!</AnimatedButton>
     </div>
   ),
 };

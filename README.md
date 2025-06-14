@@ -2,7 +2,7 @@
 
 A minimalist component library inspired by the raw beauty of Pernambuco's clay art and culture — focused on **dark mode**, organic textures, and elegant typography.
 
-> *"A raw shape molded in darkness."* A handcrafted design system made to express depth and identity through simplicity.
+> _"A raw shape molded in darkness."_ A handcrafted design system made to express depth and identity through simplicity.
 
 ## ✨ Features
 
@@ -24,15 +24,15 @@ A minimalist component library inspired by the raw beauty of Pernambuco's clay a
 pnpm add barro-ui
 ```
 
-*Note: Package will be available on npm once initial development is complete.*
+_Note: Package will be available on npm once initial development is complete._
 
 ## 📦 Usage
 
 ```tsx
-import { Button } from 'barro-ui'
+import { Button } from 'barro-ui';
 
 export function App() {
-  return <Button variant="primary">Click me</Button>
+  return <Button variant="primary">Click me</Button>;
 }
 ```
 
@@ -89,5 +89,5 @@ MIT — by [@ricardogouveia3](https://github.com/ricardogouveia3)
 
 ---
 
-*Built with ❤️ using Vite, React, TypeScript, and Tailwind CSS. Created with [Vite React Component 
-Library Starter](https://github.com/rayyamhk/vite-react-component-library-starter)*
+_Built with ❤️ using Vite, React, TypeScript, and Tailwind CSS. Created with [Vite React Component
+Library Starter](https://github.com/rayyamhk/vite-react-component-library-starter)_
