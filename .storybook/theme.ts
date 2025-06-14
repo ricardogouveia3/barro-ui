@@ -7,7 +7,7 @@ export const customTheme: Theme = create({
 
   // Branding
   brandUrl: 'https://barro.rcrd.dev',
-  brandImage: '/logo-mark.png',
+  brandImage: '/logo.svg',
   brandTarget: '_self',
 
   // Primary and Secondary Colors
@@ -15,7 +15,7 @@ export const customTheme: Theme = create({
   colorSecondary: '#10B981',
 
   // UI Colors
-  appBg: '#161616',
+  appBg: '#222425',
   appContentBg: '#161616',
   appPreviewBg: '#161616',
   appBorderColor: '#434343',
