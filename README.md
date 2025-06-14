@@ -1,8 +1,10 @@
-# Barro UI
+<img src="https://barro.rcrd.dev/logo-mark.svg" alt="Barro UI Logo" width="100">
 
-A minimalist component library inspired by the raw beauty of Pernambuco's clay art and culture — focused on **dark mode**, organic textures, and elegant typography.
+<h1 style="margin: 15px 0; padding: 0">Barro UI</h1>
 
-> _"A raw shape molded in darkness."_ A handcrafted design system made to express depth and identity through simplicity.
+A minimalist component library inspired by the raw beauty of Pernambuco’s clay art and culture — focused on **dark mode**, organic textures, and elegant typography.
+
+> _“A raw shape molded in darkness.”_ 
 
 ## ✨ Features
 
@@ -89,5 +91,5 @@ MIT — by [@ricardogouveia3](https://github.com/ricardogouveia3)
 
 ---
 
-_Built with ❤️ using Vite, React, TypeScript, and Tailwind CSS. Created with [Vite React Component
+_Built with ❤️ using Vite, React, TypeScript and Tailwind CSS. Created with [Vite React Component
 Library Starter](https://github.com/rayyamhk/vite-react-component-library-starter)_
