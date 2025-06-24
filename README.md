@@ -1,4 +1,4 @@
-<img src="https://barro.rcrd.dev/logo-mark.svg" alt="Barro UI Logo" width="100">
+<img src="https://raw.githubusercontent.com/ricardogouveia3/barro-ui/refs/heads/main/.storybook/assets/logo_mark.svg" alt="Barro UI Logo" width="100">
 
 <h1 style="margin: 15px 0; padding: 0">Barro UI</h1>
 
