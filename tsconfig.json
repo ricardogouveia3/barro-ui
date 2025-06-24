@@ -67,7 +67,7 @@
     "noUnusedLocals": false,
     "noUnusedParameters": true,
     "paths": {
-      "framer-motion": ["node_modules/framer-motion/dist/es/index.mjs"]
+      "framer-motion": ["./node_modules/framer-motion/dist/es/index.mjs"]
     }
   },
   "include": ["./lib/**/*.ts", "./lib/**/*.tsx"],
