@@ -4,7 +4,7 @@
 
 A minimalist component library inspired by the raw beauty of Pernambuco’s clay art and culture — focused on **dark mode**, organic textures, and elegant typography.
 
-> _“A raw shape molded in darkness.”_ 
+> _“A raw shape molded in darkness.”_
 
 ## ✨ Features
 
