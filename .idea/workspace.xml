@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="8eb98222-19a0-4ecf-b849-4557fd066b54" name="Changes" comment="add readme and changelog">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="8eb98222-19a0-4ecf-b849-4557fd066b54" name="Changes" comment="prettier">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Button/Button.stories.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Button/Button.stories.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Button/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Button/Button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +53,7 @@
   </component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
-    "url": "git@github.com:rayyamhk/vite-react-component-library-starter.git",
+    "url": "git@github.com:ricardogouveia3/barro-ui.git",
     "accountId": "52f8d11a-3639-4d1f-9367-66e361bf63f1"
   }
 }]]></component>
@@ -72,6 +79,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "pnpm",
+    "ts.external.directory.path": "/Users/ricardogouveia3/Developer/barro-ui/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -80,6 +88,7 @@
       <map>
         <entry key="com.intellij.reactbuddy.reactComponents" value="false" />
         <entry key="com.intellij.reactbuddy.reactInspector" value="false" />
+        <entry key="com.intellij.reactbuddy.storybook" value="false" />
       </map>
     </option>
   </component>
@@ -97,7 +106,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1750756213002</updated>
-      <workItem from="1750756215505" duration="305000" />
+      <workItem from="1750756215505" duration="1538000" />
     </task>
     <task id="LOCAL-00001" summary="add readme and changelog">
       <option name="closed" value="true" />
@@ -107,7 +116,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750756436245</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="prettier">
+      <option name="closed" value="true" />
+      <created>1750756666128</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1750756666128</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,6 +132,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add readme and changelog" />
-    <option name="LAST_COMMIT_MESSAGE" value="add readme and changelog" />
+    <MESSAGE value="prettier" />
+    <option name="LAST_COMMIT_MESSAGE" value="prettier" />
   </component>
 </project>

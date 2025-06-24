@@ -38,3 +38,12 @@ export const DisabledButton: Story = {
     disabled: true,
   },
 };
+
+export const StaticButton: Story = {
+  args: {
+    ...DefaultButton.args,
+    animateOnInteraction: false,
+    children: 'Click Me!',
+  },
+};
+

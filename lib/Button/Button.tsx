@@ -1,17 +1,12 @@
 import React from 'react';
 import clsx from 'clsx';
 import { twMerge } from 'tailwind-merge';
+import { motion } from 'framer-motion';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  /**
-   * The color of the button.
-   */
   color?: 'primary' | 'success' | 'info' | 'warning' | 'error';
-
-  /**
-   * The size of the button.
-   */
   size?: 'small' | 'medium' | 'large';
+  animateOnInteraction?: boolean;
 }
 
 const variants = {
@@ -27,13 +22,34 @@ const variants = {
 } as const;
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ color = 'primary', size = 'medium', className, ...rest }, ref) => (
-    <button
-      ref={ref}
-      className={twMerge(clsx(variants.base, variants[color], variants[size], className))}
-      {...rest}
-    />
-  ),
+  ({ color = 'primary', size = 'medium', className, animateOnInteraction = true, disabled = false, ...rest }, ref) => {
+    const classes = twMerge(clsx(variants.base, variants[color], variants[size], className));
+    
+    if (disabled) {
+      return (
+        <button
+          className={classes}
+          ref={ref}
+          disabled
+          {...rest}
+        />
+      );
+    }
+    
+    if (animateOnInteraction) {
+      return (
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.97 }}
+          className={classes}
+          ref={ref}
+          {...rest}
+        />
+      );
+    }
+    
+    return <button className={classes} ref={ref} {...rest} />;
+  }
 );
 
 Button.displayName = 'Button';
