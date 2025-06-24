@@ -46,4 +46,3 @@ export const StaticButton: Story = {
     children: 'Click Me!',
   },
 };
-

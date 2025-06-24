@@ -22,9 +22,19 @@ const variants = {
 } as const;
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ color = 'primary', size = 'medium', className, animateOnInteraction = true, disabled = false, ...rest }, ref) => {
+  (
+    {
+      color = 'primary',
+      size = 'medium',
+      className,
+      animateOnInteraction = true,
+      disabled = false,
+      ...rest
+    },
+    ref,
+  ) => {
     const classes = twMerge(clsx(variants.base, variants[color], variants[size], className));
-    
+
     if (disabled) {
       return (
         <button
@@ -35,7 +45,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         />
       );
     }
-    
+
     if (animateOnInteraction) {
       return (
         <motion.button
@@ -47,9 +57,15 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         />
       );
     }
-    
-    return <button className={classes} ref={ref} {...rest} />;
-  }
+
+    return (
+      <button
+        className={classes}
+        ref={ref}
+        {...rest}
+      />
+    );
+  },
 );
 
 Button.displayName = 'Button';
