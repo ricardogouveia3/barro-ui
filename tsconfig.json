@@ -64,6 +64,7 @@
     "noImplicitThis": true,
     "noPropertyAccessFromIndexSignature": true,
     "noUncheckedIndexedAccess": true,
+
     "noUnusedLocals": false,
     "noUnusedParameters": true,
     "paths": {

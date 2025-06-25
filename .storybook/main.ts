@@ -4,7 +4,7 @@ import { withoutVitePlugins } from '@storybook/builder-vite';
 const config: StorybookConfig = {
   stories: [
     './docs/**/*.@(mdx)', // standalone docs
-    '../lib/**/*.stories.@(js|jsx|mjs|ts|tsx)'
+    '../lib/**/*.stories.@(js|jsx|mjs|ts|tsx)',
   ],
   addons: ['@storybook/addon-essentials', '@storybook/addon-actions'],
   framework: {
