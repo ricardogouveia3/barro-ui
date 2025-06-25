@@ -43,7 +43,7 @@ export default function Card({
                 <Spinner isLoading={true} />
               </div>
             )}
-            { children }
+            {children}
           </div>
         </div>
         <Spinner isLoading={loading} />

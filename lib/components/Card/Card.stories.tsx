@@ -105,7 +105,6 @@ export const WithoutAnimatedBorder: Story = {
   },
 };
 
-
 export const Loading: Story = {
   args: {
     loading: true,
@@ -120,4 +119,3 @@ export const Loading: Story = {
     ) as ReactNode,
   },
 };
-
