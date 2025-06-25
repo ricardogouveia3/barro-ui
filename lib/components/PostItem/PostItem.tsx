@@ -1,4 +1,4 @@
-import type { PostsItemProps } from './Post.types.ts';
+import type { PostsItemProps } from './PostItem.types.ts';
 import { motion } from 'framer-motion';
 import { cardBorderMotionProps } from '../../layout/Animation.tsx';
 import { useState } from 'react';
@@ -9,7 +9,7 @@ export default function PostsItem({
   link,
   imgSrc,
   imgAlt = `Auto generated description: ${title}`,
-                                    animatedBorder = false,
+  animatedBorder = false,
 }: Readonly<PostsItemProps>) {
   const [showBorder, setShowBorder] = useState(false);
 
@@ -37,7 +37,10 @@ export default function PostsItem({
             className={`above-noise-content-background hover-background flex h-full w-full flex-col sm:min-h-40 md:h-32 md:flex-row`}
           >
             <picture className="h-48 w-full object-cover md:h-full md:w-auto md:max-w-52">
-              <source srcSet={imgSrc} type="image/jpg" />
+              <source
+                srcSet={imgSrc}
+                type="image/jpg"
+              />
               <img
                 src={imgSrc}
                 alt={imgAlt}
