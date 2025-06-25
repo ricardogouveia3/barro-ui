@@ -23,7 +23,7 @@ export default function Card({
       onFocus={() => setShowBorder(true)}
       onBlur={() => setShowBorder(false)}
     >
-      {animatedBorder && showBorder && (
+      {animatedBorder && showBorder && !loading && (
         <motion.div
           className="pointer-events-none absolute inset-0 scale-200"
           animate="animate"
@@ -33,8 +33,17 @@ export default function Card({
 
       <div className="relative z-10 h-full w-full overflow-hidden rounded-md bg-(--background-color)">
         <div className="smooth-noisy-background flex h-full w-full flex-col">
-          <div className={`${contentClassnames} above-noise-content-background h-full w-full`}>
-            {children}
+          <div
+            className={`${contentClassnames} relative above-noise-content-background h-full w-full`}
+          >
+            {loading && (
+              <div
+                className={`absolute top-0 left-0 h-full w-full bg-black/80 z-10 flex items-center justify-center`}
+              >
+                <Spinner isLoading={true} />
+              </div>
+            )}
+            { children }
           </div>
         </div>
         <Spinner isLoading={loading} />

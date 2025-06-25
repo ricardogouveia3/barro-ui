@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8eb98222-19a0-4ecf-b849-4557fd066b54" name="Changes" comment="add docs and theming to storybook">
+    <list default="true" id="8eb98222-19a0-4ecf-b849-4557fd066b54" name="Changes" comment="add TextUnderline Spinner Card components">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.storybook/BarroTheme.js" beforeDir="false" afterPath="$PROJECT_DIR$/.storybook/BarroTheme.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.storybook/docs/GettingStarted.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/.storybook/docs/GettingStarted.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.storybook/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/.storybook/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/Card/Card.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/Card/Card.stories.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/Card/Card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/Card/Card.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +76,7 @@
     &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/ricardogouveia3/Developer/barro-ui/lib/components/TextUnderline&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -98,7 +97,16 @@
     </option>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/components/TextUnderline" />
+      <recent name="$PROJECT_DIR$/lib/components/Spinner" />
+      <recent name="$PROJECT_DIR$/lib/assets" />
+      <recent name="$PROJECT_DIR$/lib/components/Card" />
+      <recent name="$PROJECT_DIR$/lib" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/components/Spinner" />
+      <recent name="$PROJECT_DIR$/lib/components" />
       <recent name="$PROJECT_DIR$/.storybook/assets" />
     </key>
   </component>
@@ -120,7 +128,8 @@
       <workItem from="1750762259949" duration="3389000" />
       <workItem from="1750805858754" duration="115000" />
       <workItem from="1750806002504" duration="6000" />
-      <workItem from="1750806075726" duration="626000" />
+      <workItem from="1750806075726" duration="6847000" />
+      <workItem from="1750844082292" duration="1897000" />
     </task>
     <task id="LOCAL-00001" summary="add readme and changelog">
       <option name="closed" value="true" />
@@ -162,7 +171,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750766234776</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add TextUnderline Spinner Card components">
+      <option name="closed" value="true" />
+      <created>1750830604141</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1750830604141</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,6 +190,7 @@
     <MESSAGE value="prettier" />
     <MESSAGE value="add framer motion" />
     <MESSAGE value="add docs and theming to storybook" />
-    <option name="LAST_COMMIT_MESSAGE" value="add docs and theming to storybook" />
+    <MESSAGE value="add TextUnderline Spinner Card components" />
+    <option name="LAST_COMMIT_MESSAGE" value="add TextUnderline Spinner Card components" />
   </component>
 </project>
