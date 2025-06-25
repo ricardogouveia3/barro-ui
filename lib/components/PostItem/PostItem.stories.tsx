@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import PostItem from './PostItem.tsx';
 
 const meta: Meta<typeof PostItem> = {
-  title: 'Components/PostsItem',
+  title: 'Components/PostItem',
   component: PostItem,
   tags: ['autodocs'],
   args: {

@@ -11,7 +11,7 @@ const meta: Meta<typeof Spinner> = {
   argTypes: {
     isLoading: {
       control: 'boolean',
-      description: 'Indica se o spinner está visível',
+      description: 'Controls whether the spinner is visible.',
     },
   },
 };
@@ -22,11 +22,5 @@ type Story = StoryObj<typeof Spinner>;
 export const Default: Story = {
   args: {
     isLoading: true,
-  },
-};
-
-export const Hidden: Story = {
-  args: {
-    isLoading: false,
   },
 };

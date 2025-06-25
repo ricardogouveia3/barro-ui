@@ -77,8 +77,14 @@ export const CustomPaddingChildren: Story = {
     contentClassnames: 'w-full h-full',
     children: (
       <div className={'w-full h-full flex flex-row '}>
-        <div className={'w-full min-h-24 flex bg-gray-500'}></div>
-        <div className={'p-4'}>
+        <div className={'min-h-24 flex'}>
+          <img
+            src="https://picsum.photos/800"
+            alt="Placeholder"
+            className="h-48 object-cover md:h-full md:w-auto md:max-w-52"
+          />
+        </div>
+        <div className={'p-4 flex flex-col justify-center'}>
           <h3 className="text-xl font-bold">Lorem ipsum</h3>
           <p className="text-sm">
             Integer suscipit pretium euismod. In rutrum facilisis sapien eu euismod. Suspendisse

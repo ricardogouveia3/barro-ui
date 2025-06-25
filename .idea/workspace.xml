@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8eb98222-19a0-4ecf-b849-4557fd066b54" name="Changes" comment="add PostItem">
-      <change beforePath="$PROJECT_DIR$/lib/components/PostItem/Post.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/PostItem/PostItem.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/PostItem/PostItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/PostItem/PostItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/PostItem/PostsItem.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/PostItem/PostItem.stories.tsx" afterDir="false" />
+    <list default="true" id="8eb98222-19a0-4ecf-b849-4557fd066b54" name="Changes" comment="rename wrongly name PostItem component and files">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/Card/Card.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/Card/Card.stories.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/PostItem/PostItem.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/PostItem/PostItem.stories.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/Spinner/Spinner.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/Spinner/Spinner.stories.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/TextUnderline/TextUnderline.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/TextUnderline/TextUnderline.stories.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +131,7 @@
       <workItem from="1750805858754" duration="115000" />
       <workItem from="1750806002504" duration="6000" />
       <workItem from="1750806075726" duration="6847000" />
-      <workItem from="1750844082292" duration="2978000" />
+      <workItem from="1750844082292" duration="3928000" />
     </task>
     <task id="LOCAL-00001" summary="add readme and changelog">
       <option name="closed" value="true" />
@@ -195,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750847043969</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="rename wrongly name PostItem component and files">
+      <option name="closed" value="true" />
+      <created>1750847609842</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1750847609842</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,6 +219,7 @@
     <MESSAGE value="add TextUnderline Spinner Card components" />
     <MESSAGE value="fix card prop controls and enhance examples" />
     <MESSAGE value="add PostItem" />
-    <option name="LAST_COMMIT_MESSAGE" value="add PostItem" />
+    <MESSAGE value="rename wrongly name PostItem component and files" />
+    <option name="LAST_COMMIT_MESSAGE" value="rename wrongly name PostItem component and files" />
   </component>
 </project>
