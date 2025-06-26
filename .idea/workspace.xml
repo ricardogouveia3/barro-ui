@@ -4,17 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8eb98222-19a0-4ecf-b849-4557fd066b54" name="Changes" comment="rename wrongly name PostItem component and files">
+    <list default="true" id="8eb98222-19a0-4ecf-b849-4557fd066b54" name="Changes" comment="translate docs">
+      <change afterPath="$PROJECT_DIR$/.github/workflows/release.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.npmrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.releaserc.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/Card/Card.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/Card/Card.stories.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/PostItem/PostItem.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/PostItem/PostItem.stories.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/Spinner/Spinner.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/Spinner/Spinner.stories.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/TextUnderline/TextUnderline.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/TextUnderline/TextUnderline.stories.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="workflow" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -131,7 +139,7 @@
       <workItem from="1750805858754" duration="115000" />
       <workItem from="1750806002504" duration="6000" />
       <workItem from="1750806075726" duration="6847000" />
-      <workItem from="1750844082292" duration="3928000" />
+      <workItem from="1750844082292" duration="4434000" />
     </task>
     <task id="LOCAL-00001" summary="add readme and changelog">
       <option name="closed" value="true" />
@@ -205,7 +213,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750847609842</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="translate docs">
+      <option name="closed" value="true" />
+      <created>1750848308068</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1750848308068</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,6 +236,7 @@
     <MESSAGE value="fix card prop controls and enhance examples" />
     <MESSAGE value="add PostItem" />
     <MESSAGE value="rename wrongly name PostItem component and files" />
-    <option name="LAST_COMMIT_MESSAGE" value="rename wrongly name PostItem component and files" />
+    <MESSAGE value="translate docs" />
+    <option name="LAST_COMMIT_MESSAGE" value="translate docs" />
   </component>
 </project>
