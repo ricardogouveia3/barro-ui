@@ -101,9 +101,7 @@ Most components accept `className` or similar props for custom styling:
 
 ```tsx
 <Card classNames="shadow-lg border-2">
-  <TextUnderline className="text-blue-500 hover:text-blue-700">
-    Custom styled link
-  </TextUnderline>
+  <TextUnderline className="text-blue-500 hover:text-blue-700">Custom styled link</TextUnderline>
 </Card>
 ```
 
@@ -128,6 +126,7 @@ Most components accept `className` or similar props for custom styling:
 ## 🧱 Development Progress
 
 ### Core Infrastructure ✅
+
 - [x] Vite + React 19 + TypeScript setup
 - [x] Tailwind CSS v4 integration
 - [x] Storybook configuration
@@ -138,6 +137,7 @@ Most components accept `className` or similar props for custom styling:
 - [x] TypeScript declaration files generation
 
 ### Design System ✅
+
 - [x] Dark mode support with organic textures
 - [x] Custom color palette (inspired by clay, bronze and soil)
 - [x] Design tokens (colors, typography, spacing)
@@ -145,12 +145,14 @@ Most components accept `className` or similar props for custom styling:
 - [x] Framer Motion animations
 
 ### Components ✅
+
 - [x] Card component with loading states
 - [x] PostItem component for content display
 - [x] Spinner component
 - [x] TextUnderline component with animations
 
 ### Future Roadmap 🚧
+
 - [ ] Button component variants
 - [ ] Form components (Input, Textarea, Select)
 - [ ] Navigation components
