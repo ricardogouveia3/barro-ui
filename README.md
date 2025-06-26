@@ -2,16 +2,22 @@
 
 <h1 style="margin: 15px 0; padding: 0">Barro UI</h1>
 
-A minimalist component library inspired by the raw beauty of Pernambuco’s clay art and culture — focused on **dark mode**, organic textures, and elegant typography.
+[![npm version](https://badge.fury.io/js/barro-ui.svg)](https://www.npmjs.com/package/barro-ui)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+
+A minimalist component library inspired by the raw beauty of Pernambuco's clay art and culture — focused on **dark mode**, organic textures, and elegant typography.
 
 > _“A raw shape molded in darkness.”_
 
 ## ✨ Features
 
-- 🌑 **Dark mode** by default
-- 🎨 Component-first system built with **Tailwind CSS**
-- ⚙️ Written in **TypeScript** and **React**
+- 🌑 **Dark mode** by default with organic textures
+- 🎨 Component-first system built with **Tailwind CSS v4**
+- ⚙️ Written in **TypeScript** and **React 19**
 - 🌫️ Visual language inspired by texture and materiality
+- ✨ **Framer Motion** animations and micro-interactions
 - 📚 **Storybook** integration for component development and documentation
 - 🧪 **Vitest** for comprehensive testing
 - 🚀 **Vite** for lightning-fast development and building
@@ -23,19 +29,82 @@ A minimalist component library inspired by the raw beauty of Pernambuco’s clay
 ## 🚀 Installation
 
 ```bash
+# npm
+npm install barro-ui
+
+# yarn
+yarn add barro-ui
+
+# pnpm
 pnpm add barro-ui
 ```
 
-_Note: Package will be available on npm once initial development is complete._
+### Peer Dependencies
+
+Make sure you have React 19+ installed:
+
+```bash
+npm install react@^19.0.0 react-dom@^19.0.0
+```
 
 ## 📦 Usage
 
+### 1. Import styles globally
+
+Add the CSS import to your global styles file:
+
+```css
+/* styles/globals.css */
+@import 'barro-ui/css';
+```
+
+Or import in your main app file:
+
 ```tsx
-import { Button } from 'barro-ui';
+// main.tsx or layout.tsx
+import 'barro-ui/css';
+```
+
+### 2. Use components
+
+```tsx
+import { Card, PostItem, Spinner, TextUnderline } from 'barro-ui';
 
 export function App() {
-  return <Button variant="primary">Click me</Button>;
+  return (
+    <Card>
+      <h1>Welcome to Barro UI</h1>
+      <TextUnderline href="#">Learn more</TextUnderline>
+    </Card>
+  );
 }
+```
+
+## 🎨 Styling
+
+### Tailwind CSS Integration
+
+Barro UI is built with Tailwind CSS v4 and includes its own design tokens. The components use CSS custom properties that can be customized:
+
+```css
+:root {
+  /* Override Barro UI design tokens */
+  --background-color: #your-color;
+  --text-color: #your-color;
+  /* ... other custom properties */
+}
+```
+
+### Custom Classes
+
+Most components accept `className` or similar props for custom styling:
+
+```tsx
+<Card classNames="shadow-lg border-2">
+  <TextUnderline className="text-blue-500 hover:text-blue-700">
+    Custom styled link
+  </TextUnderline>
+</Card>
 ```
 
 ## 🛠️ Development
@@ -58,19 +127,39 @@ export function App() {
 
 ## 🧱 Development Progress
 
-- [x] Vite + React + TypeScript setup
-- [x] Tailwind CSS integration
+### Core Infrastructure ✅
+- [x] Vite + React 19 + TypeScript setup
+- [x] Tailwind CSS v4 integration
 - [x] Storybook configuration
 - [x] Testing setup with Vitest
 - [x] Code quality tools (ESLint, Prettier, Husky)
 - [x] GitHub Actions for deployment
-- [ ] Dark mode support (`darkMode: 'class'`)
-- [ ] Custom color palette (inspired by clay, bronze and soil)
-- [ ] Design tokens (colors, typography, spacing)
-- [ ] Button component
-- [ ] Card component
-- [ ] Subtle noise background (organic textures)
+- [x] NPM package configuration with dual exports (ESM/CJS)
+- [x] TypeScript declaration files generation
+
+### Design System ✅
+- [x] Dark mode support with organic textures
+- [x] Custom color palette (inspired by clay, bronze and soil)
+- [x] Design tokens (colors, typography, spacing)
+- [x] Subtle noise background textures
+- [x] Framer Motion animations
+
+### Components ✅
+- [x] Card component with loading states
+- [x] PostItem component for content display
+- [x] Spinner component
+- [x] TextUnderline component with animations
+
+### Future Roadmap 🚧
+- [ ] Button component variants
+- [ ] Form components (Input, Textarea, Select)
+- [ ] Navigation components
+- [ ] Modal/Dialog components
+- [ ] Layout components (Container, Grid)
+- [ ] Data display components (Table, List)
+- [ ] Feedback components (Toast, Alert)
 - [ ] Complete design documentation
+- [ ] Accessibility audit and improvements
 
 ## 🎨 Visual Identity
 

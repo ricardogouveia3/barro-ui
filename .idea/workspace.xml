@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8eb98222-19a0-4ecf-b849-4557fd066b54" name="Changes" comment="fix release workflow for building the package">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="8eb98222-19a0-4ecf-b849-4557fd066b54" name="Changes" comment="version by semantic-release">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +137,7 @@
       <workItem from="1750805858754" duration="115000" />
       <workItem from="1750806002504" duration="6000" />
       <workItem from="1750806075726" duration="6847000" />
-      <workItem from="1750844082292" duration="6983000" />
+      <workItem from="1750844082292" duration="7204000" />
     </task>
     <task id="LOCAL-00001" summary="add readme and changelog">
       <option name="closed" value="true" />
@@ -251,7 +251,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750935092255</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="version by semantic-release">
+      <option name="closed" value="true" />
+      <created>1750936227505</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1750936227505</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,6 +279,7 @@
     <MESSAGE value="fix build" />
     <MESSAGE value="fix releaserc" />
     <MESSAGE value="fix release workflow for building the package" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix release workflow for building the package" />
+    <MESSAGE value="version by semantic-release" />
+    <option name="LAST_COMMIT_MESSAGE" value="version by semantic-release" />
   </component>
 </project>
