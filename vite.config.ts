@@ -4,6 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react-swc';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
+import svgr from 'vite-plugin-svgr';
 
 import { peerDependencies } from './package.json';
 
@@ -12,6 +13,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
     dts({ rollupTypes: true }), // Output .d.ts files
+    svgr(),
   ],
   build: {
     target: 'esnext',

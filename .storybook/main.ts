@@ -1,23 +1,21 @@
+import svgr from 'vite-plugin-svgr';
 import type { StorybookConfig } from '@storybook/react-vite';
 import { withoutVitePlugins } from '@storybook/builder-vite';
 
 const config: StorybookConfig = {
-  stories: [
-    './docs/**/*.@(mdx)', // standalone docs
-    '../lib/**/*.stories.@(js|jsx|mjs|ts|tsx)',
-  ],
-  addons: ['@storybook/addon-essentials', '@storybook/addon-actions'],
   framework: {
     name: '@storybook/react-vite',
     options: {},
   },
-  core: {
-    builder: '@storybook/builder-vite',
+  stories: ['../lib/**/*.stories.tsx'],
+  addons: ['@storybook/addon-essentials'],
+  viteFinal: async (config) => {
+    return {
+      ...config,
+      publicDir: '.storybook/assets',
+      plugins: [...(await withoutVitePlugins(config.plugins, ['vite:dts'])), svgr()],
+    };
   },
-  viteFinal: async (config) => ({
-    publicDir: '.storybook/assets',
-    ...config,
-    plugins: await withoutVitePlugins(config.plugins, ['vite:dts']), // skip dts plugin
-  }),
 };
+
 export default config;
