@@ -43,16 +43,3 @@ export const cardBorderMotionProps = {
     },
   },
 };
-
-export const avatarBorderMotionProps = {
-  initial: 'initial',
-  whileHover: 'hover',
-  variants: {
-    initial: {
-      ...initialAnimatedBorderState,
-    },
-    hover: {
-      ...linearInfiniteRotation,
-    },
-  },
-};
