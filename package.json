@@ -6,6 +6,7 @@
   "author": "ricardogouveia3",
   "license": "MIT",
   "type": "module",
+  "workspaces": ["packages/*"],
   "publishConfig": {
     "access": "public"
   },
@@ -43,7 +44,8 @@
     "lint": "eslint . --ext ts,tsx --fix",
     "format": "prettier . --write --ignore-unknown",
     "release": "semantic-release --no-ci",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "postinstall": "rm -f pnpm-workspace.yaml"
   },
   "devDependencies": {
     "@semantic-release/commit-analyzer": "^13.0.1",
