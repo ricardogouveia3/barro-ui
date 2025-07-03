@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8eb98222-19a0-4ecf-b849-4557fd066b54" name="Changes" comment="update vite">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="8eb98222-19a0-4ecf-b849-4557fd066b54" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -140,6 +137,7 @@
       <workItem from="1750806075726" duration="6847000" />
       <workItem from="1750844082292" duration="7765000" />
       <workItem from="1751534691685" duration="55000" />
+      <workItem from="1751534990717" duration="537000" />
     </task>
     <task id="LOCAL-00001" summary="add readme and changelog">
       <option name="closed" value="true" />
@@ -285,7 +283,23 @@
       <option name="project" value="LOCAL" />
       <updated>1750937477199</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="chore">
+      <option name="closed" value="true" />
+      <created>1751535068567</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1751535068567</updated>
+    </task>
+    <task id="LOCAL-00020" summary="chore install">
+      <option name="closed" value="true" />
+      <created>1751535118749</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1751535118749</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -308,6 +322,8 @@
     <MESSAGE value="version by semantic-release" />
     <MESSAGE value="update readme" />
     <MESSAGE value="update vite" />
-    <option name="LAST_COMMIT_MESSAGE" value="update vite" />
+    <MESSAGE value="chore" />
+    <MESSAGE value="chore install" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore install" />
   </component>
 </project>

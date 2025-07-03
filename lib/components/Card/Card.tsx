@@ -5,14 +5,15 @@ import { motion } from 'framer-motion';
 import { cardBorderMotionProps } from '../../layout/Animation.tsx';
 
 export default function Card({
-  children,
-  classNames = '',
-  contentClassnames = 'p-4 lg:p-6',
-  loading = false,
-  animatedBorder = true,
-}: Readonly<CardProps>) {
+                               children,
+                               classNames = '',
+                               contentClassnames = 'p-4 lg:p-6',
+                               containerClassnames = 'flex flex-col',
+                               loading = false,
+                               animatedBorder = true,
+                             }: Readonly<CardProps>) {
   const [showBorder, setShowBorder] = useState(false);
-
+  
   return (
     <motion.div
       className={`default-border relative overflow-hidden rounded-lg p-px transition-all duration-300 ease-in-out ${classNames}`}
@@ -30,16 +31,12 @@ export default function Card({
           {...cardBorderMotionProps}
         />
       )}
-
+      
       <div className="relative z-10 h-full w-full overflow-hidden rounded-md bg-(--background-color)">
-        <div className="smooth-noisy-background flex h-full w-full flex-col">
-          <div
-            className={`${contentClassnames} relative above-noise-content-background h-full w-full`}
-          >
+        <div className={`smooth-noisy-background ${containerClassnames} h-full w-full`}>
+          <div className={`${contentClassnames} relative above-noise-content-background h-full w-full`}>
             {loading && (
-              <div
-                className={`absolute top-0 left-0 h-full w-full bg-black/80 z-10 flex items-center justify-center`}
-              >
+              <div className="absolute top-0 left-0 z-10 flex h-full w-full items-center justify-center bg-black/80">
                 <Spinner isLoading={true} />
               </div>
             )}

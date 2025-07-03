@@ -4,6 +4,7 @@ export type CardProps = {
   children: ReactNode;
   classNames?: string;
   contentClassnames?: string;
+  containerClassnames?: string;
   loading?: boolean;
   animatedBorder?: boolean;
 };
