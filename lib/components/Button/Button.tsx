@@ -20,15 +20,15 @@ export function Button(props: ButtonProps) {
     darkMode = true,
     ...rest
   } = props;
-  
+
   const [bgColor, setBgColor] = useState('transparent');
   const defaultTextColor = darkMode ? '#FFFFFF' : '#1A202C';
   const [textColor, setTextColor] = useState(defaultTextColor);
-  
+
   useEffect(() => {
     setTextColor(defaultTextColor);
   }, [defaultTextColor]);
-  
+
   const handleMouseEnter = () => {
     if (hoverColor) {
       setBgColor(hoverColor);
@@ -38,7 +38,7 @@ export function Button(props: ButtonProps) {
       rest.onMouseEnter(undefined!);
     }
   };
-  
+
   const handleMouseLeave = () => {
     setBgColor('transparent');
     setTextColor(defaultTextColor);
@@ -46,23 +46,23 @@ export function Button(props: ButtonProps) {
       rest.onMouseLeave(undefined!);
     }
   };
-  
+
   const roundClass = round
     ? {
-      sm: 'rounded-sm',
-      md: 'rounded-md',
-      lg: 'rounded-lg',
-      full: 'rounded-full',
-    }[round]
+        sm: 'rounded-sm',
+        md: 'rounded-md',
+        lg: 'rounded-lg',
+        full: 'rounded-full',
+      }[round]
     : 'rounded-lg';
-  
+
   const ICON_SIZE_CLASS = 'w-5 h-5';
-  
+
   const renderIcon = (position: 'left' | 'right') => {
     if (!icon || iconPosition !== position) return null;
-    
+
     const baseClass = `${position === 'left' ? 'mr-1' : 'ml-1'} ${iconClassnames}`;
-    
+
     if (typeof icon === 'string') {
       return (
         <Icon
@@ -72,14 +72,14 @@ export function Button(props: ButtonProps) {
         />
       );
     }
-    
+
     if (React.isValidElement(icon)) {
       return React.cloneElement(icon, {
         className: `${baseClass} ${ICON_SIZE_CLASS}`,
         style: { color: textColor, width: '1.25rem', height: '1.25rem' },
       });
     }
-    
+
     const IconComponent = icon as React.ComponentType<{
       className?: string;
       style?: React.CSSProperties;
@@ -91,7 +91,7 @@ export function Button(props: ButtonProps) {
       />
     );
   };
-  
+
   const content = (
     <>
       {renderIcon('left')}
@@ -99,7 +99,7 @@ export function Button(props: ButtonProps) {
       {renderIcon('right')}
     </>
   );
-  
+
   if (rest.type === 'link') {
     const { href, ...linkProps } = rest;
     return (
@@ -117,7 +117,7 @@ export function Button(props: ButtonProps) {
       </ButtonLink>
     );
   }
-  
+
   if (rest.type === 'toggle') {
     const { active, activeIcon, inactiveIcon, onClick, disabled } = rest;
     return (
@@ -132,7 +132,7 @@ export function Button(props: ButtonProps) {
       />
     );
   }
-  
+
   if (rest.type === 'button') {
     const { htmlType, disabled, onClick, ...buttonProps } = rest;
     return (
@@ -151,6 +151,6 @@ export function Button(props: ButtonProps) {
       </ButtonElement>
     );
   }
-  
+
   return null;
 }

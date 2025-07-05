@@ -3,12 +3,12 @@ import { ButtonElementProps } from './Button.types.ts';
 import { buttonLikeComponentMotionProps } from '../../layout/Animation.tsx';
 
 export function ButtonElement({
-                                className = '',
-                                style,
-                                children,
-                                disabled,
-                                ...rest
-                              }: ButtonElementProps) {
+  className = '',
+  style,
+  children,
+  disabled,
+  ...rest
+}: ButtonElementProps) {
   return (
     <motion.button
       {...rest}
