@@ -7,7 +7,7 @@ import { getContrastColor } from '../../utils/color.ts';
 import { buttonLikeComponentMotionProps } from '../../layout/Animation.tsx';
 import Icon from '../Icon/Icon.tsx';
 
-export function Button(props: ButtonProps) {
+export default function Button(props: ButtonProps) {
   const {
     children,
     className = '',
