@@ -1,5 +1,5 @@
 import type { IconProps } from '../Icon/Icon.types';
-import type { ReactNode, CSSProperties, MouseEventHandler } from 'react';
+import React, { ReactNode, CSSProperties, MouseEventHandler } from 'react';
 
 export type CommonButtonProps = {
   children?: ReactNode;
@@ -34,3 +34,24 @@ export type ButtonAsToggle = {
 };
 
 export type ButtonProps = CommonButtonProps & (ButtonAsButton | ButtonAsLink | ButtonAsToggle);
+
+export type ButtonToggleProps = {
+  active: boolean;
+  activeIcon: React.ComponentType<React.SVGProps<SVGSVGElement>> | string;
+  inactiveIcon: React.ComponentType<React.SVGProps<SVGSVGElement>> | string;
+  onClick?: () => void;
+  className?: string;
+  disabled?: boolean;
+};
+
+export type ButtonLinkProps = React.ComponentProps<'a'> & {
+  className?: string;
+  style?: React.CSSProperties;
+  children: React.ReactNode;
+};
+
+export type ButtonElementProps = React.ComponentProps<'button'> & {
+  className?: string;
+  style?: React.CSSProperties;
+  children: React.ReactNode;
+};

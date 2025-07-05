@@ -1,6 +1,8 @@
-import { motion } from 'framer-motion';
 import React, { useState, useEffect } from 'react';
-import { ButtonProps } from './Button.types';
+import { ButtonProps } from './Button.types.ts';
+import { ButtonLink } from './ButtonLink.tsx';
+import { ButtonElement } from './ButtonElement.tsx';
+import { ButtonToggle } from './ButtonToggle.tsx';
 import { getContrastColor } from '../../utils/color.ts';
 import { buttonLikeComponentMotionProps } from '../../layout/Animation.tsx';
 import Icon from '../Icon/Icon.tsx';
@@ -16,72 +18,68 @@ export function Button(props: ButtonProps) {
     iconClassnames = '',
     round,
     darkMode = true,
-    type,
-    variant,
-    htmlType,
-    disabled,
-    onClick,
-    href,
-    onMouseEnter,
-    onMouseLeave,
+    ...rest
   } = props;
-
+  
   const [bgColor, setBgColor] = useState('transparent');
   const defaultTextColor = darkMode ? '#FFFFFF' : '#1A202C';
   const [textColor, setTextColor] = useState(defaultTextColor);
-
+  
   useEffect(() => {
     setTextColor(defaultTextColor);
   }, [defaultTextColor]);
-
+  
   const handleMouseEnter = () => {
     if (hoverColor) {
       setBgColor(hoverColor);
       setTextColor(getContrastColor(hoverColor));
     }
-    onMouseEnter?.(undefined!);
+    if ('onMouseEnter' in rest && rest.onMouseEnter) {
+      rest.onMouseEnter(undefined!);
+    }
   };
-
+  
   const handleMouseLeave = () => {
     setBgColor('transparent');
     setTextColor(defaultTextColor);
-    onMouseLeave?.(undefined!);
+    if ('onMouseLeave' in rest && rest.onMouseLeave) {
+      rest.onMouseLeave(undefined!);
+    }
   };
-
+  
   const roundClass = round
     ? {
-        sm: 'rounded-sm',
-        md: 'rounded-md',
-        lg: 'rounded-lg',
-        full: 'rounded-full',
-      }[round]
+      sm: 'rounded-sm',
+      md: 'rounded-md',
+      lg: 'rounded-lg',
+      full: 'rounded-full',
+    }[round]
     : 'rounded-lg';
-
+  
   const ICON_SIZE_CLASS = 'w-5 h-5';
-
+  
   const renderIcon = (position: 'left' | 'right') => {
     if (!icon || iconPosition !== position) return null;
-
+    
     const baseClass = `${position === 'left' ? 'mr-1' : 'ml-1'} ${iconClassnames}`;
-
+    
     if (typeof icon === 'string') {
       return (
         <Icon
           name={icon}
-          variant={variant}
           className={`${baseClass} ${ICON_SIZE_CLASS}`}
           color={textColor}
         />
       );
     }
-
+    
     if (React.isValidElement(icon)) {
       return React.cloneElement(icon, {
         className: `${baseClass} ${ICON_SIZE_CLASS}`,
         style: { color: textColor, width: '1.25rem', height: '1.25rem' },
       });
     }
-
+    
     const IconComponent = icon as React.ComponentType<{
       className?: string;
       style?: React.CSSProperties;
@@ -93,7 +91,7 @@ export function Button(props: ButtonProps) {
       />
     );
   };
-
+  
   const content = (
     <>
       {renderIcon('left')}
@@ -101,10 +99,11 @@ export function Button(props: ButtonProps) {
       {renderIcon('right')}
     </>
   );
-
-  if (type === 'link') {
+  
+  if (rest.type === 'link') {
+    const { href, ...linkProps } = rest;
     return (
-      <motion.a
+      <ButtonLink
         href={href}
         target="_blank"
         rel="noopener noreferrer"
@@ -112,50 +111,46 @@ export function Button(props: ButtonProps) {
         style={{ ...style, backgroundColor: bgColor }}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        {...buttonLikeComponentMotionProps}
+        {...linkProps}
       >
         {content}
-      </motion.a>
+      </ButtonLink>
     );
   }
-
-  if (type === 'toggle') {
-    const IconComponent = props.icon;
+  
+  if (rest.type === 'toggle') {
+    const { active, activeIcon, inactiveIcon, onClick, disabled } = rest;
     return (
-      <motion.button
+      <ButtonToggle
+        active={!!active}
+        activeIcon={activeIcon}
+        inactiveIcon={inactiveIcon}
         onClick={onClick}
-        aria-label="Toggle button"
-        className={`default-background default-border hover-background default-text-color flex aspect-square items-center justify-center rounded-lg px-3 py-1 font-semibold sm:rounded-full ${className}`}
-        {...{
-          ...buttonLikeComponentMotionProps,
-          whileTap: { scale: 0.95 },
-        }}
-      >
-        {typeof IconComponent === 'string' ? (
-          <img
-            src={IconComponent}
-            alt="Toggle icon"
-            className="w-5 sm:w-4"
-          />
-        ) : (
-          IconComponent && <IconComponent className="default-text-color w-4" />
-        )}
-      </motion.button>
+        className={`hover-background ${className}`}
+        style={{ ...style, backgroundColor: bgColor }}
+        disabled={disabled}
+      />
     );
   }
-
-  return (
-    <motion.button
-      type={htmlType ?? 'button'}
-      disabled={disabled}
-      onClick={onClick}
-      className={`w-full rounded-lg px-5 py-3 text-center text-sm font-medium ${roundClass} default-text-color ${className} ${
-        disabled ? 'opacity-50 cursor-not-allowed' : 'hover-background default-border'
-      }`}
-      {...(disabled ? {} : buttonLikeComponentMotionProps)}
-      style={style}
-    >
-      {content}
-    </motion.button>
-  );
+  
+  if (rest.type === 'button') {
+    const { htmlType, disabled, onClick, ...buttonProps } = rest;
+    return (
+      <ButtonElement
+        type={htmlType ?? 'button'}
+        disabled={disabled}
+        onClick={onClick}
+        className={`w-full rounded-lg px-5 py-3 text-center text-sm font-medium default-border ${roundClass} default-text-color hover-background ${className} ${
+          disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
+        }`}
+        style={{ ...style, backgroundColor: bgColor }}
+        {...(disabled ? {} : buttonLikeComponentMotionProps)}
+        {...buttonProps}
+      >
+        {content}
+      </ButtonElement>
+    );
+  }
+  
+  return null;
 }

@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from './Button';
 import { icons } from '../../assets/images';
+import { ArrowRightIcon } from '@heroicons/react/24/solid'; // Example icon import
 
 const meta: Meta<typeof Button> = {
   title: 'Components/Button',
@@ -58,6 +59,21 @@ const meta: Meta<typeof Button> = {
       control: { type: 'radio' },
       options: ['solid', 'outline'],
     },
+    active: {
+      description: 'Toggle active state.',
+      control: { type: 'boolean' },
+      if: { arg: 'type', eq: 'toggle' },
+    },
+    activeIcon: {
+      description: 'Icon for active toggle state.',
+      control: false,
+      if: { arg: 'type', eq: 'toggle' },
+    },
+    inactiveIcon: {
+      description: 'Icon for inactive toggle state.',
+      control: false,
+      if: { arg: 'type', eq: 'toggle' },
+    },
   },
 };
 
@@ -94,7 +110,7 @@ export const WithCustomHoverColor: Story = {
 export const LinkTypeWithHeroIcon: Story = {
   args: {
     type: 'link',
-    href: 'https://github.com',
+    href: '/',
     children: 'Arrow Right Icon',
     icon: 'ArrowRightIcon',
     variant: 'solid',
@@ -106,7 +122,7 @@ export const LinkTypeWithHeroIcon: Story = {
 export const LinkWithRightIcon: Story = {
   args: {
     type: 'link',
-    href: 'https://example.com',
+    href: '/',
     children: 'Go to Example',
     icon: 'ArrowRightIcon',
     variant: 'outline',
@@ -118,8 +134,21 @@ export const LinkWithRightIcon: Story = {
 export const ToggleTypeWithComponentIcon: Story = {
   args: {
     type: 'toggle',
+    active: true,
+    activeIcon: ArrowRightIcon,
+    inactiveIcon: icons.rcrd,
     onClick: () => alert('Toggle clicked!'),
-    icon: icons.rcrd,
+    className: '',
+  },
+};
+
+export const ToggleTypeWithStringIcon: Story = {
+  args: {
+    type: 'toggle',
+    active: false,
+    activeIcon: icons.rcrd,
+    inactiveIcon: icons.rcrd,
+    onClick: () => alert('Toggle clicked!'),
     className: '',
   },
 };
