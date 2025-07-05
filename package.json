@@ -1,7 +1,7 @@
 {
   "name": "barro-ui",
   "private": false,
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "A minimalist component library inspired by the raw beauty of Pernambuco's clay art and culture. Build for React with Tailwind CSS",
   "author": "ricardogouveia3",
   "license": "MIT",
