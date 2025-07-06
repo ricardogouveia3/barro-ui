@@ -22,7 +22,7 @@ function getRoundedClass(rounded: NativeButtonProps['rounded']) {
   }
 }
 
-function getIconProps(
+function renderIconOrImage(
   icon: NativeButtonProps['icon'],
   isStringName: boolean,
   fill: string | undefined,
@@ -31,6 +31,19 @@ function getIconProps(
   position: 'left' | 'right',
 ) {
   if (!icon || icon.position !== position) return null;
+
+  // Se houver src, renderiza como imagem
+  if (icon.src) {
+    return (
+      <img
+        src={icon.src}
+        alt=""
+        className={`w-4 h-4 z-10 object-contain ${position === 'left' ? 'mr-2' : 'ml-2'}`}
+      />
+    );
+  }
+
+  // Caso contrário, renderiza como ícone SVG
   return (
     <Icon
       icon={typeof icon.name === 'function' ? icon.name : undefined}
@@ -122,9 +135,9 @@ export default function NativeButton({
         className={`${roundedClass} overflow-hidden z-10 smooth-noisy-background h-full w-full flex justify-center items-center`}
       >
         <div className={getInnerClass(disabled, hoverColor, roundedClass)}>
-          {getIconProps(icon, isStringName, fill, variant, iconColor, 'left')}
+          {renderIconOrImage(icon, isStringName, fill, variant, iconColor, 'left')}
           {children}
-          {getIconProps(icon, isStringName, fill, variant, iconColor, 'right')}
+          {renderIconOrImage(icon, isStringName, fill, variant, iconColor, 'right')}
         </div>
       </div>
     </motion.button>

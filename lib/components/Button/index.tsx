@@ -1,19 +1,27 @@
-import ToggleButton from './Toogle';
+import ToggleButton from './Toggle';
 import ButtonLink from './Link';
 import type { ButtonProps } from './Button.types';
 import NativeButton from './Button.tsx';
 
+function assertNever(x: never): never {
+  throw new Error(`Unexpected object: ${x}`);
+}
+
 const Button = (props: ButtonProps) => {
-  if (props.type === 'button') {
-    return <NativeButton {...props} />;
+  switch (props.type) {
+    case 'button': {
+      return <NativeButton {...props} />;
+    }
+    case 'toggle': {
+      return <ToggleButton {...props} />;
+    }
+    case 'link': {
+      return <ButtonLink {...props} />;
+    }
+    default: {
+      return assertNever(props);
+    }
   }
-  if (props.type === 'toggle') {
-    return <ToggleButton {...props} />;
-  }
-  if (props.type === 'link') {
-    return <ButtonLink {...props} />;
-  }
-  return null;
 };
 
 export default Button;

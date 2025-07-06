@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Button from './index';
-import { icons } from '../../assets/images';
+import { icons, images } from '../../assets/images';
 
 const meta: Meta<typeof Button> = {
   title: 'Components/Button',
@@ -63,6 +63,18 @@ export const ButtonWithRightCustomIconAndNotRounded: Story = {
       fill: '#ffffff',
     },
     onClick: () => alert('Button clicked!'),
+  },
+};
+
+export const ButtonWithImageAsLeftIcon: Story = {
+  args: {
+    type: 'button',
+    children: 'Brasil',
+    icon: {
+      position: 'left',
+      src: images.br,
+    },
+    onClick: () => alert('Brasil button clicked!'),
   },
 };
 
@@ -130,6 +142,18 @@ export const ButtonLinkWithRightCustomIconAndNotRounded: Story = {
   },
 };
 
+export const ButtonLinkWithImageIcon: Story = {
+  args: {
+    type: 'link',
+    children: 'Visit Brazil',
+    link: '#',
+    icon: {
+      position: 'left',
+      src: images.br,
+    },
+  },
+};
+
 export const ButtonLinkDisabled: Story = {
   args: {
     type: 'link',
@@ -173,6 +197,16 @@ export const ToggleWithAnimatedBorder: Story = {
       color: '#f59e42',
       fill: '#f59e42',
     },
+  },
+};
+
+export const ToggleWithImageAsIcon: Story = {
+  args: {
+    type: 'toggle',
+    icon: {
+      src: images.br,
+    },
+    onClick: () => alert('Flag toggled!'),
   },
 };
 

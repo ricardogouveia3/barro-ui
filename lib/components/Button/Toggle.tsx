@@ -18,7 +18,7 @@ const ToggleButton = ({
   const [showBorder, setShowBorder] = useState(false);
 
   if (!icon) return null;
-  const { name, color, fill, variant } = icon;
+  const { name, src, color, fill, variant } = icon;
   const isStringName =
     typeof name === 'string' && (name in HeroSolidIcons || name in HeroOutlineIcons);
 
@@ -55,17 +55,25 @@ const ToggleButton = ({
           className={`${
             disabled
               ? 'default-background'
-              : 'not-hover:above-noise-content-background' + ' hover:default-background'
-          } z-20  h-full w-full flex justify-center items-center rounded-lg`}
+              : 'not-hover:above-noise-content-background hover:default-background'
+          } z-20 h-full w-full flex justify-center items-center rounded-lg`}
         >
-          <Icon
-            icon={typeof name === 'function' ? name : undefined}
-            name={isStringName ? (name as keyof typeof HeroSolidIcons) : undefined}
-            color={color}
-            fill={fill}
-            variant={variant}
-            className="w-4 h-4 z-10"
-          />
+          {src ? (
+            <img
+              src={src}
+              alt="Icon"
+              className="w-4 h-4 z-10 object-contain"
+            />
+          ) : (
+            <Icon
+              icon={typeof name === 'function' ? name : undefined}
+              name={isStringName ? (name as keyof typeof HeroSolidIcons) : undefined}
+              color={color}
+              fill={fill}
+              variant={variant}
+              className="w-4 h-4 z-10"
+            />
+          )}
         </div>
       </div>
     </motion.button>

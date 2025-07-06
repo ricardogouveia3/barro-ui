@@ -22,7 +22,7 @@ function getRoundedClass(rounded: ButtonLinkProps['rounded']) {
   }
 }
 
-function getIconProps(
+function renderIconOrImage(
   icon: ButtonLinkProps['icon'],
   isStringName: boolean,
   fill: string | undefined,
@@ -31,6 +31,17 @@ function getIconProps(
   position: 'left' | 'right',
 ) {
   if (!icon || icon.position !== position) return null;
+
+  if (icon.src) {
+    return (
+      <img
+        src={icon.src}
+        alt=""
+        className={`w-4 h-4 z-10 object-contain ${position === 'left' ? 'mr-2' : 'ml-2'}`}
+      />
+    );
+  }
+
   return (
     <Icon
       icon={typeof icon.name === 'function' ? icon.name : undefined}
@@ -128,9 +139,9 @@ export default function ButtonLink({
           className={getInnerClass(disabled, hoverColor, roundedClass)}
           style={styleVars}
         >
-          {getIconProps(icon, isStringName, fill, variant, iconColor, 'left')}
+          {renderIconOrImage(icon, isStringName, fill, variant, iconColor, 'left')}
           {children}
-          {getIconProps(icon, isStringName, fill, variant, iconColor, 'right')}
+          {renderIconOrImage(icon, isStringName, fill, variant, iconColor, 'right')}
         </div>
       </div>
     </motion.a>
