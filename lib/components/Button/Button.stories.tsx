@@ -11,6 +11,70 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
+export const ButtonDefault: Story = {
+  args: {
+    type: 'button',
+    children: 'Button',
+    onClick: () => alert('Button clicked!'),
+  },
+};
+
+export const ButtonWithAnimatedBorder: Story = {
+  args: {
+    type: 'button',
+    children: 'Animated Border',
+    animatedBorder: true,
+    onClick: () => alert('Button clicked!'),
+  },
+};
+
+export const ButtonWithHoverColor: Story = {
+  args: {
+    type: 'button',
+    children: 'Hover Color Button',
+    hoverColor: '#f59e42',
+    onClick: () => alert('Button clicked!'),
+  },
+};
+
+export const ButtonWithLeftIconAndFullRounded: Story = {
+  args: {
+    type: 'button',
+    children: 'Left Icon Button',
+    rounded: 'full',
+    icon: {
+      position: 'left',
+      name: 'AcademicCapIcon',
+      color: '#ffffff',
+      variant: 'outline',
+    },
+    onClick: () => alert('Button clicked!'),
+  },
+};
+
+export const ButtonWithRightCustomIconAndNotRounded: Story = {
+  args: {
+    type: 'button',
+    children: 'Right Custom Icon Button',
+    rounded: 'none',
+    icon: {
+      position: 'right',
+      name: icons.rcrd,
+      fill: '#ffffff',
+    },
+    onClick: () => alert('Button clicked!'),
+  },
+};
+
+export const ButtonDisabled: Story = {
+  args: {
+    type: 'button',
+    children: 'Disabled Button',
+    disabled: true,
+    onClick: () => alert('Should not trigger'),
+  },
+};
+
 export const ButtonLink: Story = {
   args: {
     type: 'link',

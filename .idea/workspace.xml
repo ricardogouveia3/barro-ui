@@ -5,17 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8eb98222-19a0-4ecf-b849-4557fd066b54" name="Changes" comment="feat: refactor button component (wip); add ButtonLink">
-      <change afterPath="$PROJECT_DIR$/lib/components/Button/Link.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/components/Button/Button.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/components/Button/Button.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/Button/Button.stories.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/Button/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/Button/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/components/Button/Button.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/Button/Button.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/Button/Toogle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/Button/Toogle.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/Card/Card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/Card/Card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/PostItem/PostItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/PostItem/PostItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/lib/global.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/layout/Animation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/lib/layout/Animation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/Button/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/Button/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +151,7 @@
       <workItem from="1751541376758" duration="86000" />
       <workItem from="1751741184377" duration="2598000" />
       <workItem from="1751744223585" duration="1074000" />
-      <workItem from="1751794652905" duration="8310000" />
+      <workItem from="1751794652905" duration="9320000" />
     </task>
     <task id="LOCAL-00001" summary="add readme and changelog">
       <option name="closed" value="true" />
@@ -391,7 +385,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751798440145</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="feat: refactor button component (wip); add ButtonLink">
+      <option name="closed" value="true" />
+      <created>1751804219728</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1751804219728</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
