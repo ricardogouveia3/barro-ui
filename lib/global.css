@@ -75,3 +75,18 @@
 @utility hover-background {
   @apply transition-colors hover:bg-quartz-950 dark:hover:bg-quartz-200;
 }
+
+.custom-hover-bg:hover {
+  background: var(--custom-hover-bg) !important;
+}
+.custom-hover-text {
+  color: var(--custom-text-color);
+  transition: color 0.2s;
+}
+.custom-hover-text:hover {
+  color: var(--custom-hover-text-color);
+}
+.custom-hover-bg:hover .custom-hover-text,
+.custom-hover-bg:hover {
+  color: var(--custom-hover-text-color);
+}

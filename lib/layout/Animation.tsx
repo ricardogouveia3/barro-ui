@@ -31,7 +31,7 @@ export const buttonLikeComponentMotionProps = {
   },
 };
 
-export const cardBorderMotionProps = {
+export const animatedBorderMotionProps = {
   initial: 'initial',
   variants: {
     initial: {

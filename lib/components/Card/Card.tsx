@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Spinner } from '../index.ts';
 import type { CardProps } from './Card.types.ts';
 import { motion } from 'framer-motion';
-import { cardBorderMotionProps } from '../../layout/Animation.tsx';
+import { animatedBorderMotionProps } from '../../layout/Animation.tsx';
 
 export default function Card({
   children,
@@ -28,7 +28,7 @@ export default function Card({
         <motion.div
           className="pointer-events-none absolute inset-0 scale-200"
           animate="animate"
-          {...cardBorderMotionProps}
+          {...animatedBorderMotionProps}
         />
       )}
 

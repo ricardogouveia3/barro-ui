@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Button from './Button';
+import Button from './index';
 import { icons } from '../../assets/images';
 
 const meta: Meta<typeof Button> = {
@@ -10,6 +10,70 @@ const meta: Meta<typeof Button> = {
 
 export default meta;
 type Story = StoryObj<typeof Button>;
+
+export const ButtonLink: Story = {
+  args: {
+    type: 'link',
+    children: 'Link Button',
+    link: '/',
+  },
+};
+
+export const ButtonLinkWithAnimatedBorder: Story = {
+  args: {
+    type: 'link',
+    animatedBorder: true,
+    children: 'Link Button',
+    link: '/',
+  },
+};
+
+export const ButtonLinkWithHoverColor: Story = {
+  args: {
+    type: 'link',
+    children: 'Hover Color Link Button',
+    link: '/',
+    hoverColor: '#f59e42',
+  },
+};
+
+export const ButtonLinkWithLeftIconAndFullRounded: Story = {
+  args: {
+    type: 'link',
+    children: 'Left Icon Link Button',
+    link: '/',
+    rounded: 'full',
+    icon: {
+      position: 'left',
+      name: 'AcademicCapIcon',
+      color: '#ffffff',
+      variant: 'outline',
+    },
+  },
+};
+
+export const ButtonLinkWithRightCustomIconAndNotRounded: Story = {
+  args: {
+    type: 'link',
+    children: 'Right Custom Icon Link Button',
+    rounded: 'none',
+    link: '/',
+    icon: {
+      position: 'right',
+      name: icons.rcrd,
+      fill: '#ffffff',
+    },
+  },
+};
+
+export const ButtonLinkDisabled: Story = {
+  args: {
+    type: 'link',
+    children: 'Disabled Link Button',
+    link: '/',
+    disabled: true,
+  },
+};
 
 export const ToggleWithHeroiconName: Story = {
   args: {

@@ -1,5 +1,8 @@
 import { motion } from 'framer-motion';
-import { buttonLikeComponentMotionProps, cardBorderMotionProps } from '../../layout/Animation.tsx';
+import {
+  buttonLikeComponentMotionProps,
+  animatedBorderMotionProps,
+} from '../../layout/Animation.tsx';
 import { ToggleButtonProps } from './Button.types.ts';
 import Icon from '../Icon/Icon.tsx';
 import * as HeroSolidIcons from '@heroicons/react/24/solid';
@@ -42,14 +45,18 @@ const ToggleButton = ({
         <motion.div
           className="pointer-events-none absolute inset-0 scale-200"
           animate="animate"
-          {...cardBorderMotionProps}
+          {...animatedBorderMotionProps}
         />
       )}
       <div
         className={`z-10 smooth-noisy-background h-full w-full flex justify-center items-center rounded-lg`}
       >
         <div
-          className={`z-20 not-hover:above-noise-content-background hover:default-background h-full w-full flex justify-center items-center rounded-lg`}
+          className={`${
+            disabled
+              ? 'default-background'
+              : 'not-hover:above-noise-content-background' + ' hover:default-background'
+          } z-20  h-full w-full flex justify-center items-center rounded-lg`}
         >
           <Icon
             icon={typeof name === 'function' ? name : undefined}

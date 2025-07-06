@@ -1,6 +1,6 @@
 import type { PostsItemProps } from './PostItem.types.ts';
 import { motion } from 'framer-motion';
-import { cardBorderMotionProps } from '../../layout/Animation.tsx';
+import { animatedBorderMotionProps } from '../../layout/Animation.tsx';
 import { useState } from 'react';
 
 export default function PostsItem({
@@ -28,7 +28,7 @@ export default function PostsItem({
           <motion.div
             className="pointer-events-none absolute inset-0"
             animate="animate"
-            {...cardBorderMotionProps}
+            {...animatedBorderMotionProps}
           />
         )}
 
