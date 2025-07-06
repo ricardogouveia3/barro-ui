@@ -19,6 +19,15 @@ export const ButtonDefault: Story = {
   },
 };
 
+export const ButtonFullWidth: Story = {
+  args: {
+    type: 'button',
+    fullWidth: true,
+    children: 'Button',
+    onClick: () => alert('Button clicked!'),
+  },
+};
+
 export const ButtonWithAnimatedBorder: Story = {
   args: {
     type: 'button',

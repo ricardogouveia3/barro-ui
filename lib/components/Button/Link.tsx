@@ -88,6 +88,7 @@ export default function ButtonLink({
   disabled = false,
   animatedBorder = false,
   hoverColor,
+  fullWidth = false,
 }: Readonly<ButtonLinkProps>) {
   const [showBorder, setShowBorder] = useState(false);
 
@@ -101,7 +102,7 @@ export default function ButtonLink({
   const disabledClass = 'cursor-not-allowed opacity-60';
   const baseClass =
     'relative overflow-hidden default-text-color flex items-center justify-center p-px' +
-    ` text-center text-sm font-medium ${roundedClass} hover-background default-border w-fit border`;
+    ` text-center text-sm font-medium ${roundedClass} hover-background default-border ${fullWidth ? 'w-full' : 'w-fit'} border`;
 
   const defaultBg = '#fff';
   const defaultContrastColor = getContrastColor(defaultBg);

@@ -20,6 +20,7 @@ export type NativeButtonProps = BaseButtonProps & {
   children: React.ReactNode;
   onClick?: () => void;
   icon?: ButtonIconProps;
+  fullWidth?: boolean;
 };
 
 export type ButtonLinkProps = BaseButtonProps & {
@@ -28,6 +29,7 @@ export type ButtonLinkProps = BaseButtonProps & {
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
   icon?: ButtonIconProps;
+  fullWidth?: boolean;
 };
 
 export type ToggleButtonProps = BaseButtonProps & {
