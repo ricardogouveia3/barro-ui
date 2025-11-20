@@ -45,7 +45,7 @@ export function variants<T extends VariantProps<T>>(base: string, config: Varian
         const matches = Object.entries(conditions).every(([key, value]) => {
           const currentVal = currentVariants[key as keyof T];
           if (Array.isArray(value)) {
-            return value.includes(currentVal as keyof T[K]);
+            return value.includes(currentVal as string);
           }
           return currentVal === value;
         });

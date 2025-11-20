@@ -9,6 +9,8 @@ export default function Icon({
   color = 'currentColor',
   fill,
   variant = 'outline',
+  'aria-label': ariaLabel,
+  'aria-hidden': ariaHidden,
 }: Readonly<IconProps>) {
   const heroIcon =
     name && variant === 'solid'
@@ -22,9 +24,13 @@ export default function Icon({
     return null;
   }
 
+  const effectiveAriaHidden = ariaHidden ?? !ariaLabel;
+
   return (
     <IconComponent
       className={className}
+      aria-label={ariaLabel}
+      aria-hidden={effectiveAriaHidden}
       style={{
         color,
         ...(fill ? { fill } : {}),

@@ -9,4 +9,6 @@ export type IconProps = {
   color?: string;
   fill?: string;
   variant?: 'solid' | 'outline';
+  'aria-label'?: string;
+  'aria-hidden'?: boolean | 'true' | 'false';
 };
