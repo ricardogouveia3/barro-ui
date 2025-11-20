@@ -8,9 +8,9 @@ describe('Card', () => {
     render(
       <Card>
         <div>Card Content</div>
-      </Card>
+      </Card>,
     );
-    
+
     expect(screen.getByText('Card Content')).toBeInTheDocument();
   });
 
@@ -18,9 +18,9 @@ describe('Card', () => {
     const { container } = render(
       <Card classNames="custom-card-class">
         <div>Content</div>
-      </Card>
+      </Card>,
     );
-    
+
     const card = container.querySelector('[aria-label="region"]');
     expect(card).toBeInTheDocument();
     expect(card).toHaveClass('custom-card-class');
@@ -30,9 +30,9 @@ describe('Card', () => {
     const { container } = render(
       <Card contentClassnames="p-8">
         <div>Content</div>
-      </Card>
+      </Card>,
     );
-    
+
     const card = container.querySelector('[aria-label="region"]');
     expect(card).toBeInTheDocument();
     expect(card).toHaveClass('default-border');
@@ -42,9 +42,9 @@ describe('Card', () => {
     const { container } = render(
       <Card containerClassnames="flex-row">
         <div>Content</div>
-      </Card>
+      </Card>,
     );
-    
+
     const card = container.querySelector('[aria-label="region"]');
     expect(card).toBeInTheDocument();
   });
@@ -53,9 +53,9 @@ describe('Card', () => {
     render(
       <Card loading={true}>
         <div>Content</div>
-      </Card>
+      </Card>,
     );
-    
+
     const spinner = screen.getByText('Loading...', { exact: false });
     expect(spinner).toBeInTheDocument();
   });
@@ -64,9 +64,9 @@ describe('Card', () => {
     const { container } = render(
       <Card loading={true}>
         <div>Content</div>
-      </Card>
+      </Card>,
     );
-    
+
     const card = container.querySelector('[aria-busy="true"]');
     expect(card).toBeInTheDocument();
   });
@@ -75,9 +75,9 @@ describe('Card', () => {
     const { container } = render(
       <Card loading={false}>
         <div>Content</div>
-      </Card>
+      </Card>,
     );
-    
+
     const card = container.querySelector('[aria-busy="false"]');
     expect(card).toBeInTheDocument();
   });
@@ -86,9 +86,9 @@ describe('Card', () => {
     const { container } = render(
       <Card>
         <div>Content</div>
-      </Card>
+      </Card>,
     );
-    
+
     const card = container.querySelector('[aria-label="region"]');
     expect(card).toBeInTheDocument();
     expect(card).toHaveAttribute('aria-label', 'region');
@@ -99,12 +99,12 @@ describe('Card', () => {
     const { container } = render(
       <Card animatedBorder={true}>
         <div>Content</div>
-      </Card>
+      </Card>,
     );
-    
+
     const card = container.querySelector('[aria-label="region"]');
     expect(card).toBeInTheDocument();
-    
+
     await user.hover(card as HTMLElement);
     // O border animado deve aparecer quando hover
     // Como usa framer-motion, verificamos que o componente está interativo
@@ -116,12 +116,12 @@ describe('Card', () => {
     const { container } = render(
       <Card animatedBorder={false}>
         <div>Content</div>
-      </Card>
+      </Card>,
     );
-    
+
     const card = container.querySelector('[aria-label="region"]');
     expect(card).toBeInTheDocument();
-    
+
     await user.hover(card as HTMLElement);
     // Quando animatedBorder é false, não deve ter o border animado
     expect(card).toBeInTheDocument();
@@ -131,9 +131,9 @@ describe('Card', () => {
     const { container } = render(
       <Card>
         <div>Content</div>
-      </Card>
+      </Card>,
     );
-    
+
     const card = container.querySelector('[aria-label="region"]');
     expect(card).toBeInTheDocument();
   });
@@ -144,12 +144,11 @@ describe('Card', () => {
         <h2>Title</h2>
         <p>Description</p>
         <button>Action</button>
-      </Card>
+      </Card>,
     );
-    
+
     expect(screen.getByText('Title')).toBeInTheDocument();
     expect(screen.getByText('Description')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /action/i })).toBeInTheDocument();
   });
 });
-

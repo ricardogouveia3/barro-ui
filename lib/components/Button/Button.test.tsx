@@ -7,11 +7,14 @@ describe('Button', () => {
   describe('Button type (NativeButton)', () => {
     it('should render button with children', () => {
       render(
-        <Button type="button" onClick={vi.fn()}>
+        <Button
+          type="button"
+          onClick={vi.fn()}
+        >
           Click me
-        </Button>
+        </Button>,
       );
-      
+
       const button = screen.getByRole('button', { name: /click me/i });
       expect(button).toBeInTheDocument();
       expect(button).toHaveTextContent('Click me');
@@ -20,26 +23,33 @@ describe('Button', () => {
     it('should call onClick when clicked', async () => {
       const handleClick = vi.fn();
       const user = userEvent.setup();
-      
+
       render(
-        <Button type="button" onClick={handleClick}>
+        <Button
+          type="button"
+          onClick={handleClick}
+        >
           Click me
-        </Button>
+        </Button>,
       );
-      
+
       const button = screen.getByRole('button');
       await user.click(button);
-      
+
       expect(handleClick).toHaveBeenCalledTimes(1);
     });
 
     it('should be disabled when disabled prop is true', () => {
       render(
-        <Button type="button" onClick={vi.fn()} disabled={true}>
+        <Button
+          type="button"
+          onClick={vi.fn()}
+          disabled={true}
+        >
           Disabled Button
-        </Button>
+        </Button>,
       );
-      
+
       const button = screen.getByRole('button');
       expect(button).toBeDisabled();
       expect(button).toHaveAttribute('aria-disabled', 'true');
@@ -49,46 +59,62 @@ describe('Button', () => {
     it('should not call onClick when disabled', async () => {
       const handleClick = vi.fn();
       const user = userEvent.setup();
-      
+
       render(
-        <Button type="button" onClick={handleClick} disabled={true}>
+        <Button
+          type="button"
+          onClick={handleClick}
+          disabled={true}
+        >
           Disabled
-        </Button>
+        </Button>,
       );
-      
+
       const button = screen.getByRole('button');
       await user.click(button);
-      
+
       expect(handleClick).not.toHaveBeenCalled();
     });
 
     it('should apply fullWidth class when fullWidth is true', () => {
       render(
-        <Button type="button" onClick={vi.fn()} fullWidth={true}>
+        <Button
+          type="button"
+          onClick={vi.fn()}
+          fullWidth={true}
+        >
           Full Width
-        </Button>
+        </Button>,
       );
-      
+
       const button = screen.getByRole('button');
       expect(button).toHaveClass('w-full');
     });
 
     it('should apply rounded classes correctly', () => {
       const { rerender } = render(
-        <Button type="button" onClick={vi.fn()} rounded="full">
+        <Button
+          type="button"
+          onClick={vi.fn()}
+          rounded="full"
+        >
           Rounded Full
-        </Button>
+        </Button>,
       );
-      
+
       let button = screen.getByRole('button');
       expect(button).toHaveClass('rounded-full');
 
       rerender(
-        <Button type="button" onClick={vi.fn()} rounded="none">
+        <Button
+          type="button"
+          onClick={vi.fn()}
+          rounded="none"
+        >
           Not Rounded
-        </Button>
+        </Button>,
       );
-      
+
       button = screen.getByRole('button');
       expect(button).not.toHaveClass('rounded-full');
       expect(button).not.toHaveClass('rounded-lg');
@@ -96,11 +122,14 @@ describe('Button', () => {
 
     it('should use medium rounded by default', () => {
       render(
-        <Button type="button" onClick={vi.fn()}>
+        <Button
+          type="button"
+          onClick={vi.fn()}
+        >
           Default
-        </Button>
+        </Button>,
       );
-      
+
       const button = screen.getByRole('button');
       expect(button).toHaveClass('rounded-lg');
     });
@@ -117,9 +146,9 @@ describe('Button', () => {
           }}
         >
           With Icon
-        </Button>
+        </Button>,
       );
-      
+
       const button = screen.getByRole('button');
       expect(button).toBeInTheDocument();
       // Verifica que um SVG foi renderizado (o ícone)
@@ -139,9 +168,9 @@ describe('Button', () => {
           }}
         >
           With Icon
-        </Button>
+        </Button>,
       );
-      
+
       const button = screen.getByRole('button');
       expect(button).toBeInTheDocument();
       const svg = button.querySelector('svg');
@@ -159,9 +188,9 @@ describe('Button', () => {
           }}
         >
           With Image
-        </Button>
+        </Button>,
       );
-      
+
       const button = screen.getByRole('button');
       const img = button.querySelector('img');
       expect(img).toBeInTheDocument();
@@ -170,11 +199,15 @@ describe('Button', () => {
 
     it('should apply custom hover color styles', () => {
       render(
-        <Button type="button" onClick={vi.fn()} hoverColor="#FF5733">
+        <Button
+          type="button"
+          onClick={vi.fn()}
+          hoverColor="#FF5733"
+        >
           Custom Hover
-        </Button>
+        </Button>,
       );
-      
+
       const button = screen.getByRole('button');
       // Verifica que o estilo customizado foi aplicado
       expect(button).toHaveStyle({ '--custom-hover-bg': '#FF5733' });
@@ -182,11 +215,14 @@ describe('Button', () => {
 
     it('should have type="button" attribute', () => {
       render(
-        <Button type="button" onClick={vi.fn()}>
+        <Button
+          type="button"
+          onClick={vi.fn()}
+        >
           Button
-        </Button>
+        </Button>,
       );
-      
+
       const button = screen.getByRole('button');
       expect(button).toHaveAttribute('type', 'button');
     });
@@ -195,11 +231,14 @@ describe('Button', () => {
   describe('Link type (ButtonLink)', () => {
     it('should render as link', () => {
       render(
-        <Button type="link" link="/test">
+        <Button
+          type="link"
+          link="/test"
+        >
           Link Button
-        </Button>
+        </Button>,
       );
-      
+
       const link = screen.getByRole('link');
       expect(link).toBeInTheDocument();
       expect(link).toHaveAttribute('href', '/test');
@@ -207,22 +246,29 @@ describe('Button', () => {
 
     it('should open link in new tab', () => {
       render(
-        <Button type="link" link="/external">
+        <Button
+          type="link"
+          link="/external"
+        >
           External Link
-        </Button>
+        </Button>,
       );
-      
+
       const link = screen.getByRole('link');
       expect(link).toHaveAttribute('target', '_blank');
     });
 
     it('should be disabled when disabled prop is true', () => {
       const { container } = render(
-        <Button type="link" link="/test" disabled={true}>
+        <Button
+          type="link"
+          link="/test"
+          disabled={true}
+        >
           Disabled Link
-        </Button>
+        </Button>,
       );
-      
+
       const link = container.querySelector('a');
       expect(link).toBeInTheDocument();
       expect(link).toHaveAttribute('aria-disabled', 'true');
@@ -232,11 +278,15 @@ describe('Button', () => {
 
     it('should apply fullWidth class when fullWidth is true', () => {
       render(
-        <Button type="link" link="/test" fullWidth={true}>
+        <Button
+          type="link"
+          link="/test"
+          fullWidth={true}
+        >
           Full Width Link
-        </Button>
+        </Button>,
       );
-      
+
       const link = screen.getByRole('link');
       expect(link).toHaveClass('w-full');
     });
@@ -252,9 +302,9 @@ describe('Button', () => {
             name: 'AcademicCapIcon',
             variant: 'outline',
           }}
-        />
+        />,
       );
-      
+
       const button = screen.getByRole('button');
       expect(button).toBeInTheDocument();
       expect(button).toHaveAttribute('aria-label', 'Toggle button');
@@ -263,7 +313,7 @@ describe('Button', () => {
     it('should call onClick when clicked', async () => {
       const handleClick = vi.fn();
       const user = userEvent.setup();
-      
+
       render(
         <Button
           type="toggle"
@@ -272,12 +322,12 @@ describe('Button', () => {
             name: 'AcademicCapIcon',
             variant: 'outline',
           }}
-        />
+        />,
       );
-      
+
       const button = screen.getByRole('button');
       await user.click(button);
-      
+
       expect(handleClick).toHaveBeenCalledTimes(1);
     });
 
@@ -291,18 +341,21 @@ describe('Button', () => {
             name: 'AcademicCapIcon',
             variant: 'outline',
           }}
-        />
+        />,
       );
-      
+
       const button = screen.getByRole('button');
       expect(button).toBeDisabled();
     });
 
     it('should return null when icon is not provided', () => {
       const { container } = render(
-        <Button type="toggle" onClick={vi.fn()} />
+        <Button
+          type="toggle"
+          onClick={vi.fn()}
+        />,
       );
-      
+
       expect(container).toBeEmptyDOMElement();
     });
 
@@ -314,9 +367,9 @@ describe('Button', () => {
           icon={{
             src: 'https://example.com/icon.png',
           }}
-        />
+        />,
       );
-      
+
       const button = screen.getByRole('button');
       const img = button.querySelector('img');
       expect(img).toBeInTheDocument();
@@ -324,4 +377,3 @@ describe('Button', () => {
     });
   });
 });
-

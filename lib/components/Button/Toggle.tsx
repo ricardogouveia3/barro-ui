@@ -27,7 +27,7 @@ const ToggleButton = ({
     <motion.button
       className={cn(
         'relative overflow-hidden default-border flex items-center justify-center rounded-lg h-10 w-10 p-px',
-        disabled ? 'cursor-not-allowed' : 'cursor-pointer'
+        disabled ? 'cursor-not-allowed' : 'cursor-pointer',
       )}
       onClick={onClick}
       aria-label="Toggle button"
@@ -56,7 +56,7 @@ const ToggleButton = ({
             'z-20 h-full w-full flex justify-center items-center rounded-lg',
             disabled
               ? 'default-background'
-              : 'not-hover:above-noise-content-background hover:default-background'
+              : 'not-hover:above-noise-content-background hover:default-background',
           )}
         >
           {src ? (

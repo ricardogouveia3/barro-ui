@@ -30,7 +30,7 @@ export default function TextUnderline({
       className={cn(
         'default-text-color inline-block font-bold underline decoration-wavy underline-offset-8 transition-colors',
         (isHovered || isHoveredOrFocused) && 'decoration-cyan-500',
-        className
+        className,
       )}
     >
       {children}

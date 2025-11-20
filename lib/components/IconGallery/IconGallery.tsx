@@ -30,7 +30,7 @@ export default function IconGallery({
           'md:grid-cols-4',
           'lg:grid-cols-6',
           'xl:grid-cols-8',
-          '2xl:grid-cols-10'
+          '2xl:grid-cols-10',
         )}
       >
         {names.map((name) => {
@@ -48,7 +48,7 @@ export default function IconGallery({
               />
               <span
                 className={cn(
-                  'text-xs text-center px-1 break-all w-full truncate sm:whitespace-normal text-white'
+                  'text-xs text-center px-1 break-all w-full truncate sm:whitespace-normal text-white',
                 )}
                 title={name}
               >

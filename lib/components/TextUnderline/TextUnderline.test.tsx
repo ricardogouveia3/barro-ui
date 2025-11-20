@@ -6,7 +6,7 @@ import TextUnderline from './TextUnderline';
 describe('TextUnderline', () => {
   it('should render with href and children', () => {
     render(<TextUnderline href="/test">Click me</TextUnderline>);
-    
+
     const link = screen.getByRole('link', { name: /click me/i });
     expect(link).toBeInTheDocument();
     expect(link).toHaveAttribute('href', '/test');
@@ -15,7 +15,7 @@ describe('TextUnderline', () => {
 
   it('should open link in new tab with security attributes', () => {
     render(<TextUnderline href="/external">External Link</TextUnderline>);
-    
+
     const link = screen.getByRole('link');
     expect(link).toHaveAttribute('target', '_blank');
     expect(link).toHaveAttribute('rel', 'noopener noreferrer');
@@ -23,11 +23,14 @@ describe('TextUnderline', () => {
 
   it('should apply custom className', () => {
     render(
-      <TextUnderline href="/test" className="custom-class">
+      <TextUnderline
+        href="/test"
+        className="custom-class"
+      >
         Link
-      </TextUnderline>
+      </TextUnderline>,
     );
-    
+
     const link = screen.getByRole('link');
     expect(link).toHaveClass('custom-class');
   });
@@ -35,34 +38,36 @@ describe('TextUnderline', () => {
   it('should apply decoration-cyan-500 when hovered', async () => {
     const user = userEvent.setup();
     render(<TextUnderline href="/test">Link</TextUnderline>);
-    
+
     const link = screen.getByRole('link');
-    
+
     await user.hover(link);
     expect(link).toHaveClass('decoration-cyan-500');
-    
+
     await user.unhover(link);
     expect(link).not.toHaveClass('decoration-cyan-500');
   });
 
   it('should apply decoration-cyan-500 when isHoveredOrFocused is true', () => {
     render(
-      <TextUnderline href="/test" isHoveredOrFocused={true}>
+      <TextUnderline
+        href="/test"
+        isHoveredOrFocused={true}
+      >
         Link
-      </TextUnderline>
+      </TextUnderline>,
     );
-    
+
     const link = screen.getByRole('link');
     expect(link).toHaveClass('decoration-cyan-500');
   });
 
   it('should have default styling classes', () => {
     render(<TextUnderline href="/test">Link</TextUnderline>);
-    
+
     const link = screen.getByRole('link');
     expect(link).toHaveClass('default-text-color');
     expect(link).toHaveClass('underline');
     expect(link).toHaveClass('decoration-wavy');
   });
 });
-

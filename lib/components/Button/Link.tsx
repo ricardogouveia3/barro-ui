@@ -79,8 +79,8 @@ function getInnerClass(disabled: boolean, hoverColor: string | undefined, rounde
       ? 'default-background'
       : cn(
           'not-hover:above-noise-content-background hover:default-background',
-          hoverColor && 'custom-hover-bg custom-hover-text'
-        )
+          hoverColor && 'custom-hover-bg custom-hover-text',
+        ),
   );
 }
 
@@ -121,7 +121,7 @@ export default function ButtonLink({
         'relative overflow-hidden default-text-color flex items-center justify-center p-px text-center text-sm font-medium hover-background default-border border',
         roundedClass,
         fullWidth ? 'w-full' : 'w-fit',
-        disabled && 'cursor-not-allowed opacity-60'
+        disabled && 'cursor-not-allowed opacity-60',
       )}
       onMouseEnter={disabled ? undefined : onMouseEnter}
       onMouseLeave={disabled ? undefined : onMouseLeave}
@@ -142,7 +142,7 @@ export default function ButtonLink({
       <div
         className={cn(
           'overflow-hidden z-10 smooth-noisy-background h-full w-full flex justify-center items-center',
-          roundedClass
+          roundedClass,
         )}
       >
         <div

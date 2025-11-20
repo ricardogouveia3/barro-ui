@@ -81,8 +81,8 @@ function getInnerClass(disabled: boolean, hoverColor: string | undefined, rounde
       ? 'default-background'
       : cn(
           'not-hover:above-noise-content-background hover:default-background',
-          hoverColor && 'custom-hover-bg custom-hover-text'
-        )
+          hoverColor && 'custom-hover-bg custom-hover-text',
+        ),
   );
 }
 
@@ -120,7 +120,7 @@ export default function NativeButton({
         'relative overflow-hidden default-text-color flex items-center justify-center p-px text-center text-sm font-medium hover-background default-border border',
         roundedClass,
         fullWidth ? 'w-full' : 'w-fit',
-        disabled ? 'cursor-not-allowed opacity-60' : 'cursor-pointer'
+        disabled ? 'cursor-not-allowed opacity-60' : 'cursor-pointer',
       )}
       onClick={disabled ? undefined : onClick}
       onHoverStart={disabled ? undefined : () => setShowBorder(true)}
@@ -141,7 +141,7 @@ export default function NativeButton({
       <div
         className={cn(
           'overflow-hidden z-10 smooth-noisy-background h-full w-full flex justify-center items-center',
-          roundedClass
+          roundedClass,
         )}
       >
         <div className={getInnerClass(disabled, hoverColor, roundedClass)}>
