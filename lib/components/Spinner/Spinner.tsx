@@ -1,6 +1,14 @@
 import type { SpinnerProps } from './Spinner.types.ts';
 import { cn } from '../../utils/cn.ts';
 
+/**
+ * A loading spinner component, typically used within cards or other containers.
+ *
+ * @example
+ * ```tsx
+ * <CardSpinner isLoading={true} />
+ * ```
+ */
 const CardSpinner = ({ isLoading }: SpinnerProps) => {
   return (
     <div className={cn('absolute z-10 items-center justify-center', isLoading ? 'flex' : 'hidden')}>

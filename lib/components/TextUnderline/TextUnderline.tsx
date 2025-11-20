@@ -2,6 +2,16 @@ import type { TextUnderlineProps } from './TextUnderline.types.ts';
 import { useState } from 'react';
 import { cn } from '../../utils/cn.ts';
 
+/**
+ * A link component with a wavy underline effect that animates on hover or focus.
+ *
+ * @example
+ * ```tsx
+ * <TextUnderline href="https://example.com">
+ *   Visit Website
+ * </TextUnderline>
+ * ```
+ */
 export default function TextUnderline({
   href,
   children,

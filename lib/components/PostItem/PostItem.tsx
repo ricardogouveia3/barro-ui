@@ -3,6 +3,20 @@ import { motion } from 'framer-motion';
 import { animatedBorderMotionProps } from '../../layout/Animation.tsx';
 import { useAnimatedBorder } from '../../hooks/useAnimatedBorder.ts';
 
+/**
+ * A card-like component for displaying blog posts or articles with an image, title, and description.
+ * Renders as a link that opens in a new tab.
+ *
+ * @example
+ * ```tsx
+ * <PostsItem
+ *   title="My Blog Post"
+ *   description="A short summary of the post."
+ *   link="https://example.com/post"
+ *   imgSrc="/path/to/image.jpg"
+ * />
+ * ```
+ */
 export default function PostsItem({
   title,
   description,

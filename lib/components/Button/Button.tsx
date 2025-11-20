@@ -109,6 +109,26 @@ function getStyleVars(
   return undefined;
 }
 
+/**
+ * A versatile button component that supports various styles, icons, and animations.
+ *
+ * @example
+ * ```tsx
+ * <NativeButton onClick={() => console.log('clicked')}>
+ *   Click me
+ * </NativeButton>
+ * ```
+ *
+ * @example
+ * ```tsx
+ * <NativeButton
+ *   icon={{ name: 'ArrowRightIcon', position: 'right' }}
+ *   animatedBorder
+ * >
+ *   Next Step
+ * </NativeButton>
+ * ```
+ */
 export default function NativeButton({
   children,
   onClick,

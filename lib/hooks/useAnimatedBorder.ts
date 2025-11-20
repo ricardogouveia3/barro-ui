@@ -32,11 +32,11 @@ export interface UseAnimatedBorderReturn {
 }
 
 /**
- * Hook para gerenciar estado e handlers de border animado em componentes.
- * Centraliza a lógica de hover/focus que controla a exibição de borders animados.
+ * Hook to manage the state and handlers for animated borders in components.
+ * Centralizes the hover/focus logic that controls the display of animated borders.
  *
- * @param options - Opções de configuração do hook
- * @returns Objeto com `showBorder` e `handlers` para eventos de interação
+ * @param options - Configuration options for the hook
+ * @returns Object with `showBorder` boolean and `handlers` for interaction events
  *
  * @example
  * ```tsx

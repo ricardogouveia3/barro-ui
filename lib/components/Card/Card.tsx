@@ -10,6 +10,24 @@ const cardVariants = variants(
   'default-border relative overflow-hidden rounded-lg p-px transition-all duration-300 ease-in-out',
 );
 
+/**
+ * A container component with optional animated borders and loading state.
+ *
+ * @example
+ * ```tsx
+ * <Card>
+ *   <h2>Card Title</h2>
+ *   <p>Card content goes here.</p>
+ * </Card>
+ * ```
+ *
+ * @example
+ * ```tsx
+ * <Card loading={isLoading} animatedBorder={false}>
+ *   <Content />
+ * </Card>
+ * ```
+ */
 export default function Card({
   children,
   className = '',
