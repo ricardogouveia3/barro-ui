@@ -2,9 +2,9 @@ import type { ReactNode } from 'react';
 
 export type CardProps = {
   children: ReactNode;
-  classNames?: string;
-  contentClassnames?: string;
-  containerClassnames?: string;
+  className?: string;
+  contentClassName?: string;
+  containerClassName?: string;
   loading?: boolean;
   animatedBorder?: boolean;
 };

@@ -14,9 +14,9 @@ describe('Card', () => {
     expect(screen.getByText('Card Content')).toBeInTheDocument();
   });
 
-  it('should apply custom classNames', () => {
+  it('should apply custom className', () => {
     const { container } = render(
-      <Card classNames="custom-card-class">
+      <Card className="custom-card-class">
         <div>Content</div>
       </Card>,
     );
@@ -26,9 +26,9 @@ describe('Card', () => {
     expect(card).toHaveClass('custom-card-class');
   });
 
-  it('should apply custom contentClassnames', () => {
+  it('should apply custom contentClassName', () => {
     const { container } = render(
-      <Card contentClassnames="p-8">
+      <Card contentClassName="p-8">
         <div>Content</div>
       </Card>,
     );
@@ -38,9 +38,9 @@ describe('Card', () => {
     expect(card).toHaveClass('default-border');
   });
 
-  it('should apply custom containerClassnames', () => {
+  it('should apply custom containerClassName', () => {
     const { container } = render(
-      <Card containerClassnames="flex-row">
+      <Card containerClassName="flex-row">
         <div>Content</div>
       </Card>,
     );
@@ -127,7 +127,7 @@ describe('Card', () => {
     expect(card).toBeInTheDocument();
   });
 
-  it('should use default contentClassnames when not provided', () => {
+  it('should use default contentClassName when not provided', () => {
     const { container } = render(
       <Card>
         <div>Content</div>

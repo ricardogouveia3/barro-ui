@@ -7,9 +7,9 @@ import { cn } from '../../utils/cn.ts';
 
 export default function Card({
   children,
-  classNames = '',
-  contentClassnames = 'p-4 lg:p-6',
-  containerClassnames = 'flex flex-col',
+  className = '',
+  contentClassName = 'p-4 lg:p-6',
+  containerClassName = 'flex flex-col',
   loading = false,
   animatedBorder = true,
 }: Readonly<CardProps>) {
@@ -19,7 +19,7 @@ export default function Card({
     <motion.div
       className={cn(
         'default-border relative overflow-hidden rounded-lg p-px transition-all duration-300 ease-in-out',
-        classNames,
+        className,
       )}
       aria-label="region"
       aria-busy={loading}
@@ -37,11 +37,11 @@ export default function Card({
       )}
 
       <div className="relative z-10 h-full w-full overflow-hidden rounded-md bg-(--background-color)">
-        <div className={cn('smooth-noisy-background h-full w-full', containerClassnames)}>
+        <div className={cn('smooth-noisy-background h-full w-full', containerClassName)}>
           <div
             className={cn(
               'relative above-noise-content-background h-full w-full',
-              contentClassnames,
+              contentClassName,
             )}
           >
             {loading && (

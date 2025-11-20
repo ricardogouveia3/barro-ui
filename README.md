@@ -100,7 +100,7 @@ Barro UI is built with Tailwind CSS v4 and includes its own design tokens. The c
 Most components accept `className` or similar props for custom styling:
 
 ```tsx
-<Card classNames="shadow-lg border-2">
+<Card className="shadow-lg border-2">
   <TextUnderline className="text-blue-500 hover:text-blue-700">Custom styled link</TextUnderline>
 </Card>
 ```

@@ -8,8 +8,8 @@ const meta: Meta<typeof Card> = {
   tags: ['autodocs'],
   args: {
     children: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    classNames: '',
-    contentClassnames: 'p-4',
+    className: '',
+    contentClassName: 'p-4',
     animatedBorder: true,
     loading: false,
   },
@@ -19,13 +19,17 @@ const meta: Meta<typeof Card> = {
       description: 'Content to be rendered inside the card.',
       defaultValue: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     },
-    classNames: {
+    className: {
       control: 'text',
       description: 'Additional Tailwind CSS classes for the outer card wrapper.',
     },
-    contentClassnames: {
+    contentClassName: {
       control: 'text',
       description: 'Tailwind CSS classes for the content container inside the card.',
+    },
+    containerClassName: {
+      control: 'text',
+      description: 'Tailwind CSS classes for the container wrapper inside the card.',
     },
     animatedBorder: {
       control: 'boolean',
@@ -58,7 +62,7 @@ export const Default: Story = {
 
 export const WithCustomClassNames: Story = {
   args: {
-    classNames: 'bg-gray-100 dark:bg-gray-800',
+    className: 'bg-gray-100 dark:bg-gray-800',
     children: (
       <div>
         <h3 className="text-xl font-bold">Lorem ipsum</h3>
@@ -73,8 +77,8 @@ export const WithCustomClassNames: Story = {
 
 export const CustomPaddingChildren: Story = {
   args: {
-    classNames: '',
-    contentClassnames: 'w-full h-full',
+    className: '',
+    contentClassName: 'w-full h-full',
     children: (
       <div className="w-full h-full flex flex-row">
         <div className="min-h-24 flex">

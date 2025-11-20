@@ -109,9 +109,11 @@ describe('Icon', () => {
   });
 
   it('should warn and return null when icon name is not found', () => {
+    // Usa type assertion para testar comportamento com nome inválido
+    const invalidIconName = 'NonExistentIcon' as unknown as keyof typeof HeroOutlineIcons;
     const { container } = render(
       <Icon
-        name="NonExistentIcon"
+        name={invalidIconName}
         variant="outline"
       />,
     );
