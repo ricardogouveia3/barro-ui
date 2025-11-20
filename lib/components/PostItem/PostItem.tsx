@@ -33,9 +33,7 @@ export default function PostsItem({
         )}
 
         <div className="border-box smooth-noisy-background hover-background relative z-10 overflow-hidden rounded-md">
-          <div
-            className={`above-noise-content-background hover-background flex h-full w-full flex-col sm:min-h-40 md:h-32 md:flex-row`}
-          >
+          <div className="above-noise-content-background hover-background flex h-full w-full flex-col sm:min-h-40 md:h-32 md:flex-row">
             <picture className="h-48 w-full object-cover md:h-full md:w-auto md:max-w-52">
               <source
                 srcSet={imgSrc}
@@ -46,7 +44,7 @@ export default function PostsItem({
                 alt={imgAlt}
                 decoding="async"
                 loading="lazy"
-                className={`h-48 w-full object-cover md:h-full md:w-auto md:max-w-52`}
+                className="h-48 w-full object-cover md:h-full md:w-auto md:max-w-52"
                 width={420}
                 height={195}
               />

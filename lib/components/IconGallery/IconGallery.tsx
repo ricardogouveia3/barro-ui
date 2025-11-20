@@ -1,6 +1,7 @@
 import * as HeroOutlineIcons from '@heroicons/react/24/outline';
 import * as HeroSolidIcons from '@heroicons/react/24/solid';
 import { Icon } from '../index.ts';
+import { cn } from '../../utils/cn.ts';
 
 type Variant = 'outline' | 'solid';
 
@@ -23,15 +24,14 @@ export default function IconGallery({
   return (
     <div className="p-6 space-y-6 w-full">
       <div
-        className={`
-          grid gap-6
-          grid-cols-2
-          sm:grid-cols-3
-          md:grid-cols-4
-          lg:grid-cols-6
-          xl:grid-cols-8
-          2xl:grid-cols-10
-        `}
+        className={cn(
+          'grid gap-6 grid-cols-2',
+          'sm:grid-cols-3',
+          'md:grid-cols-4',
+          'lg:grid-cols-6',
+          'xl:grid-cols-8',
+          '2xl:grid-cols-10'
+        )}
       >
         {names.map((name) => {
           return (
@@ -47,14 +47,9 @@ export default function IconGallery({
                 color={color}
               />
               <span
-                className="
-    text-xs text-center px-1
-    break-all
-    w-full
-    truncate
-    sm:whitespace-normal
-    text-white
-  "
+                className={cn(
+                  'text-xs text-center px-1 break-all w-full truncate sm:whitespace-normal text-white'
+                )}
                 title={name}
               >
                 {name}

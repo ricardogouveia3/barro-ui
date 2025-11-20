@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8eb98222-19a0-4ecf-b849-4557fd066b54" name="Changes" comment="feat: refactor button component; add Button" />
+    <list default="true" id="8eb98222-19a0-4ecf-b849-4557fd066b54" name="Changes" comment="fix: allow fullwidth buttons" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,27 +74,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/ricardogouveia3/Developer/barro-ui/lib/components/PostItem&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/ricardogouveia3/Developer/barro-ui/node_modules/prettier&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/ricardogouveia3/Developer/barro-ui/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/ricardogouveia3/Developer/barro-ui/lib/assets",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "pnpm",
+    "prettierjs.PrettierConfiguration.Package": "/Users/ricardogouveia3/Developer/barro-ui/node_modules/prettier",
+    "ts.external.directory.path": "/Users/ricardogouveia3/Developer/barro-ui/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -106,10 +106,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/assets" />
       <recent name="$PROJECT_DIR$/lib/components/PostItem" />
       <recent name="$PROJECT_DIR$/lib/components/TextUnderline" />
       <recent name="$PROJECT_DIR$/lib/components/Spinner" />
-      <recent name="$PROJECT_DIR$/lib/assets" />
       <recent name="$PROJECT_DIR$/lib/components/Card" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -146,6 +146,7 @@
       <workItem from="1751741184377" duration="2598000" />
       <workItem from="1751744223585" duration="1074000" />
       <workItem from="1751794652905" duration="9320000" />
+      <workItem from="1751805818723" duration="4022000" />
     </task>
     <task id="LOCAL-00001" summary="add readme and changelog">
       <option name="closed" value="true" />
@@ -387,15 +388,29 @@
       <option name="project" value="LOCAL" />
       <updated>1751804219728</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="fix: buttons now accept images as icons">
+      <option name="closed" value="true" />
+      <created>1751807548507</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1751807548507</updated>
+    </task>
+    <task id="LOCAL-00032" summary="fix: allow fullwidth buttons">
+      <option name="closed" value="true" />
+      <created>1751810879517</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1751810879517</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add framer motion" />
-    <MESSAGE value="add docs and theming to storybook" />
     <MESSAGE value="add TextUnderline Spinner Card components" />
     <MESSAGE value="fix card prop controls and enhance examples" />
     <MESSAGE value="add PostItem" />
@@ -419,6 +434,8 @@
     <MESSAGE value="chore: bump version" />
     <MESSAGE value="feat: refactor button component (wip); add toggle" />
     <MESSAGE value="feat: refactor button component (wip); add ButtonLink" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: refactor button component (wip); add ButtonLink" />
+    <MESSAGE value="fix: buttons now accept images as icons" />
+    <MESSAGE value="fix: allow fullwidth buttons" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: allow fullwidth buttons" />
   </component>
 </project>

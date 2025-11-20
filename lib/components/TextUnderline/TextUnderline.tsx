@@ -1,5 +1,6 @@
 import type { TextUnderlineProps } from './TextUnderline.types.ts';
 import { useState } from 'react';
+import { cn } from '../../utils/cn.ts';
 
 export default function TextUnderline({
   href,
@@ -26,9 +27,11 @@ export default function TextUnderline({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`default-text-color inline-block font-bold underline decoration-wavy underline-offset-8 transition-colors ${
-        isHovered || isHoveredOrFocused ? 'decoration-cyan-500' : ''
-      } ${className}`}
+      className={cn(
+        'default-text-color inline-block font-bold underline decoration-wavy underline-offset-8 transition-colors',
+        (isHovered || isHoveredOrFocused) && 'decoration-cyan-500',
+        className
+      )}
     >
       {children}
     </a>

@@ -1,9 +1,9 @@
 import type { SpinnerProps } from './Spinner.types.ts';
+import { cn } from '../../utils/cn.ts';
 
 const CardSpinner = ({ isLoading }: SpinnerProps) => {
-  const spinnerToggle = isLoading ? 'flex' : 'hidden';
   return (
-    <div className={`${isLoading} absolute ${spinnerToggle} z-10 items-center justify-center`}>
+    <div className={cn('absolute z-10 items-center justify-center', isLoading ? 'flex' : 'hidden')}>
       <div>
         <svg
           aria-hidden="true"

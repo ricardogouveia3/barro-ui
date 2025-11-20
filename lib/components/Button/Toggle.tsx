@@ -8,6 +8,7 @@ import Icon from '../Icon/Icon.tsx';
 import * as HeroSolidIcons from '@heroicons/react/24/solid';
 import * as HeroOutlineIcons from '@heroicons/react/24/outline';
 import { useState } from 'react';
+import { cn } from '../../utils/cn.ts';
 
 const ToggleButton = ({
   onClick,
@@ -24,9 +25,10 @@ const ToggleButton = ({
 
   return (
     <motion.button
-      className={`${
+      className={cn(
+        'relative overflow-hidden default-border flex items-center justify-center rounded-lg h-10 w-10 p-px',
         disabled ? 'cursor-not-allowed' : 'cursor-pointer'
-      } relative overflow-hidden default-border flex items-center justify-center rounded-lg h-10 w-10 p-px`}
+      )}
       onClick={onClick}
       aria-label="Toggle button"
       disabled={disabled}
@@ -48,15 +50,14 @@ const ToggleButton = ({
           {...animatedBorderMotionProps}
         />
       )}
-      <div
-        className={`z-10 smooth-noisy-background h-full w-full flex justify-center items-center rounded-lg`}
-      >
+      <div className="z-10 smooth-noisy-background h-full w-full flex justify-center items-center rounded-lg">
         <div
-          className={`${
+          className={cn(
+            'z-20 h-full w-full flex justify-center items-center rounded-lg',
             disabled
               ? 'default-background'
               : 'not-hover:above-noise-content-background hover:default-background'
-          } z-20 h-full w-full flex justify-center items-center rounded-lg`}
+          )}
         >
           {src ? (
             <img

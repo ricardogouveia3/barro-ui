@@ -3,6 +3,7 @@ import { Spinner } from '../index.ts';
 import type { CardProps } from './Card.types.ts';
 import { motion } from 'framer-motion';
 import { animatedBorderMotionProps } from '../../layout/Animation.tsx';
+import { cn } from '../../utils/cn.ts';
 
 export default function Card({
   children,
@@ -16,7 +17,10 @@ export default function Card({
 
   return (
     <motion.div
-      className={`default-border relative overflow-hidden rounded-lg p-px transition-all duration-300 ease-in-out ${classNames}`}
+      className={cn(
+        'default-border relative overflow-hidden rounded-lg p-px transition-all duration-300 ease-in-out',
+        classNames
+      )}
       aria-label="region"
       aria-busy={loading}
       onHoverStart={() => setShowBorder(true)}
@@ -33,10 +37,8 @@ export default function Card({
       )}
 
       <div className="relative z-10 h-full w-full overflow-hidden rounded-md bg-(--background-color)">
-        <div className={`smooth-noisy-background ${containerClassnames} h-full w-full`}>
-          <div
-            className={`${contentClassnames} relative above-noise-content-background h-full w-full`}
-          >
+        <div className={cn('smooth-noisy-background h-full w-full', containerClassnames)}>
+          <div className={cn('relative above-noise-content-background h-full w-full', contentClassnames)}>
             {loading && (
               <div className="absolute top-0 left-0 z-10 flex h-full w-full items-center justify-center bg-black/80">
                 <Spinner isLoading={true} />
@@ -45,7 +47,6 @@ export default function Card({
             {children}
           </div>
         </div>
-        <Spinner isLoading={loading} />
       </div>
     </motion.div>
   );
