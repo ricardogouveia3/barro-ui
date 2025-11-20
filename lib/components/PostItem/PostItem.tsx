@@ -1,7 +1,7 @@
 import type { PostsItemProps } from './PostItem.types.ts';
 import { motion } from 'framer-motion';
 import { animatedBorderMotionProps } from '../../layout/Animation.tsx';
-import { useState } from 'react';
+import { useAnimatedBorder } from '../../hooks/useAnimatedBorder.ts';
 
 export default function PostsItem({
   title,
@@ -11,20 +11,19 @@ export default function PostsItem({
   imgAlt = `Auto generated description: ${title}`,
   animatedBorder = false,
 }: Readonly<PostsItemProps>) {
-  const [showBorder, setShowBorder] = useState(false);
+  const { showBorder, handlers } = useAnimatedBorder({
+    animated: animatedBorder,
+  });
 
   return (
     <article>
       <motion.a
         href={link}
         target="_blank"
-        onHoverStart={() => setShowBorder(true)}
-        onHoverEnd={() => setShowBorder(false)}
-        onFocus={() => setShowBorder(true)}
-        onBlur={() => setShowBorder(false)}
+        {...handlers}
         className="border-box default-border hover-background relative flex w-full flex-col items-center overflow-hidden rounded-lg p-px md:flex-row"
       >
-        {showBorder && animatedBorder && (
+        {showBorder && (
           <motion.div
             className="pointer-events-none absolute inset-0"
             animate="animate"

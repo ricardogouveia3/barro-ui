@@ -7,8 +7,8 @@ import { ToggleButtonProps } from './Button.types.ts';
 import Icon from '../Icon/Icon.tsx';
 import * as HeroSolidIcons from '@heroicons/react/24/solid';
 import * as HeroOutlineIcons from '@heroicons/react/24/outline';
-import { useState } from 'react';
 import { cn } from '../../utils/cn.ts';
+import { useAnimatedBorder } from '../../hooks/useAnimatedBorder.ts';
 
 const ToggleButton = ({
   onClick,
@@ -16,7 +16,10 @@ const ToggleButton = ({
   disabled,
   animatedBorder = false,
 }: Readonly<ToggleButtonProps>) => {
-  const [showBorder, setShowBorder] = useState(false);
+  const { showBorder, handlers } = useAnimatedBorder({
+    animated: animatedBorder,
+    disabled,
+  });
 
   if (!icon) return null;
   const { name, src, color, fill, variant } = icon;
@@ -32,10 +35,7 @@ const ToggleButton = ({
       onClick={onClick}
       aria-label="Toggle button"
       disabled={disabled}
-      onHoverStart={() => setShowBorder(true)}
-      onHoverEnd={() => setShowBorder(false)}
-      onFocus={() => setShowBorder(true)}
-      onBlur={() => setShowBorder(false)}
+      {...handlers}
       {...(!disabled
         ? {
             ...buttonLikeComponentMotionProps,
@@ -43,7 +43,7 @@ const ToggleButton = ({
           }
         : {})}
     >
-      {animatedBorder && showBorder && !disabled && (
+      {showBorder && (
         <motion.div
           className="pointer-events-none absolute inset-0 scale-200"
           animate="animate"

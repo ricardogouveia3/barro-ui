@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import Icon from './Icon';
+import * as HeroSolidIcons from '@heroicons/react/24/solid';
 
 // Mock console.warn
 const consoleWarnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
@@ -110,7 +111,7 @@ describe('Icon', () => {
 
   it('should warn and return null when icon name is not found', () => {
     // Usa type assertion para testar comportamento com nome inválido
-    const invalidIconName = 'NonExistentIcon' as unknown as keyof typeof HeroOutlineIcons;
+    const invalidIconName = 'NonExistentIcon' as unknown as keyof typeof HeroSolidIcons;
     const { container } = render(
       <Icon
         name={invalidIconName}

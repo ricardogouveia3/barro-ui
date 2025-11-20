@@ -4,12 +4,12 @@ import {
   buttonLikeComponentMotionProps,
 } from '../../layout/Animation.tsx';
 import { Icon } from '../index.ts';
-import { useState } from 'react';
 import * as HeroSolidIcons from '@heroicons/react/24/solid';
 import * as HeroOutlineIcons from '@heroicons/react/24/outline';
 import { getContrastColor } from '../../utils/color';
 import { NativeButtonProps } from './Button.types.ts';
 import { cn } from '../../utils/cn.ts';
+import { useAnimatedBorder } from '../../hooks/useAnimatedBorder.ts';
 
 function getRoundedClass(rounded: NativeButtonProps['rounded']) {
   switch (rounded) {
@@ -96,7 +96,10 @@ export default function NativeButton({
   hoverColor,
   fullWidth = false,
 }: Readonly<NativeButtonProps>) {
-  const [showBorder, setShowBorder] = useState(false);
+  const { showBorder, handlers } = useAnimatedBorder({
+    animated: animatedBorder,
+    disabled,
+  });
 
   const name = icon?.name;
   const fill = icon?.fill;
@@ -123,15 +126,12 @@ export default function NativeButton({
         disabled ? 'cursor-not-allowed opacity-60' : 'cursor-pointer',
       )}
       onClick={disabled ? undefined : onClick}
-      onHoverStart={disabled ? undefined : () => setShowBorder(true)}
-      onHoverEnd={disabled ? undefined : () => setShowBorder(false)}
-      onFocus={disabled ? undefined : () => setShowBorder(true)}
-      onBlur={disabled ? undefined : () => setShowBorder(false)}
+      {...handlers}
       disabled={disabled}
       aria-disabled={disabled}
       style={styleVars}
     >
-      {animatedBorder && showBorder && !disabled && (
+      {showBorder && (
         <motion.div
           className="pointer-events-none absolute inset-0 scale-200"
           animate="animate"

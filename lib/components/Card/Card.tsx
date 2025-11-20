@@ -1,9 +1,9 @@
-import { useState } from 'react';
 import { Spinner } from '../index.ts';
 import type { CardProps } from './Card.types.ts';
 import { motion } from 'framer-motion';
 import { animatedBorderMotionProps } from '../../layout/Animation.tsx';
 import { cn } from '../../utils/cn.ts';
+import { useAnimatedBorder } from '../../hooks/useAnimatedBorder.ts';
 
 export default function Card({
   children,
@@ -13,7 +13,10 @@ export default function Card({
   loading = false,
   animatedBorder = true,
 }: Readonly<CardProps>) {
-  const [showBorder, setShowBorder] = useState(false);
+  const { showBorder, handlers } = useAnimatedBorder({
+    animated: animatedBorder,
+    disabled: loading,
+  });
 
   return (
     <motion.div
@@ -23,12 +26,9 @@ export default function Card({
       )}
       aria-label="region"
       aria-busy={loading}
-      onHoverStart={() => setShowBorder(true)}
-      onHoverEnd={() => setShowBorder(false)}
-      onFocus={() => setShowBorder(true)}
-      onBlur={() => setShowBorder(false)}
+      {...handlers}
     >
-      {animatedBorder && showBorder && !loading && (
+      {showBorder && (
         <motion.div
           className="pointer-events-none absolute inset-0 scale-200"
           animate="animate"

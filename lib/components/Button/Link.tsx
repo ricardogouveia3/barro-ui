@@ -7,9 +7,9 @@ import { Icon } from '../index.ts';
 import { ButtonLinkProps } from './Button.types.ts';
 import * as HeroSolidIcons from '@heroicons/react/24/solid';
 import * as HeroOutlineIcons from '@heroicons/react/24/outline';
-import { useState } from 'react';
 import { getContrastColor } from '../../utils/color';
 import { cn } from '../../utils/cn.ts';
+import { useAnimatedBorder } from '../../hooks/useAnimatedBorder.ts';
 
 function getRoundedClass(rounded: ButtonLinkProps['rounded']) {
   switch (rounded) {
@@ -96,7 +96,10 @@ export default function ButtonLink({
   hoverColor,
   fullWidth = false,
 }: Readonly<ButtonLinkProps>) {
-  const [showBorder, setShowBorder] = useState(false);
+  const { showBorder, handlers } = useAnimatedBorder({
+    animated: animatedBorder,
+    disabled,
+  });
 
   const name = icon?.name;
   const fill = icon?.fill;
@@ -125,14 +128,11 @@ export default function ButtonLink({
       )}
       onMouseEnter={disabled ? undefined : onMouseEnter}
       onMouseLeave={disabled ? undefined : onMouseLeave}
-      onHoverStart={disabled ? undefined : () => setShowBorder(true)}
-      onHoverEnd={disabled ? undefined : () => setShowBorder(false)}
-      onFocus={disabled ? undefined : () => setShowBorder(true)}
-      onBlur={disabled ? undefined : () => setShowBorder(false)}
+      {...handlers}
       tabIndex={disabled ? -1 : 0}
       aria-disabled={disabled}
     >
-      {animatedBorder && showBorder && !disabled && (
+      {showBorder && (
         <motion.div
           className="pointer-events-none absolute inset-0 scale-200"
           animate="animate"
