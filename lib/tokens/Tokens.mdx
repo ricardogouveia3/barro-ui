@@ -1,0 +1,38 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
+import { colors } from './colors';
+import { typography } from './typography';
+
+<Meta title="Design Tokens/Colors & Typography" />
+
+# Design Tokens
+
+Barro UI uses a set of design tokens to ensure consistency across the application. These tokens are available as TypeScript constants in `lib/tokens`.
+
+## Colors
+
+The color palette is inspired by the raw beauty of Pernambuco's clay art and culture.
+
+<ColorPalette>
+  <ColorItem
+    title="Quartz"
+    subtitle="Primary grays and neutrals"
+    colors={colors.quartz}
+  />
+  <ColorItem
+    title="Base"
+    subtitle="Black and White"
+    colors={colors.base}
+  />
+</ColorPalette>
+
+## Typography
+
+<div className="sb-unstyled">
+  <h3>Font Family</h3>
+  <div style={{ fontFamily: typography.fontFamily.sans.join(', '), fontSize: '1.5rem', marginBottom: '1rem' }}>
+    {typography.fontFamily.sans.join(', ')}
+  </div>
+  <p>
+    The quick brown fox jumps over the lazy dog.
+  </p>
+</div>

@@ -53,8 +53,11 @@ export type ButtonIconProps = {
 /**
  * Properties for a standard button element.
  */
+/**
+ * Properties for a standard button element.
+ */
 export type NativeButtonProps = BaseButtonProps &
-  React.ComponentPropsWithoutRef<'button'> & {
+  Omit<React.ComponentPropsWithoutRef<'button'>, 'type'> & {
     /**
      * Icon configuration.
      */
@@ -70,7 +73,7 @@ export type NativeButtonProps = BaseButtonProps &
  * Properties for a link button (renders as an anchor tag).
  */
 export type ButtonLinkProps = BaseButtonProps &
-  React.ComponentPropsWithoutRef<'a'> & {
+  Omit<React.ComponentPropsWithoutRef<'a'>, 'type'> & {
     /**
      * The URL the link points to.
      */
@@ -84,13 +87,18 @@ export type ButtonLinkProps = BaseButtonProps &
      * @default false
      */
     fullWidth?: boolean;
+    /**
+     * Whether the link is disabled.
+     * @default false
+     */
+    disabled?: boolean;
   };
 
 /**
  * Properties for a toggle button.
  */
 export type ToggleButtonProps = BaseButtonProps &
-  Omit<React.ComponentPropsWithoutRef<'button'>, 'onClick'> & {
+  Omit<React.ComponentPropsWithoutRef<'button'>, 'onClick' | 'type'> & {
     /**
      * Callback function when the toggle is clicked.
      */
