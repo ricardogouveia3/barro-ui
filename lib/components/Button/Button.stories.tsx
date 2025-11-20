@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Button from './index';
 import { icons, images } from '../../assets/images';
+import { colors } from '../../tokens';
 
 const meta: Meta<typeof Button> = {
   title: 'Components/Button',
@@ -41,7 +42,7 @@ export const ButtonWithHoverColor: Story = {
   args: {
     type: 'button',
     children: 'Hover Color Button',
-    hoverColor: '#f59e42',
+    hoverColor: colors.quartz[600], // Example using token
     onClick: () => alert('Button clicked!'),
   },
 };

@@ -150,18 +150,18 @@ Most components accept `className` or similar props for custom styling:
 - [x] PostItem component for content display
 - [x] Spinner component
 - [x] TextUnderline component with animations
+- [x] Button component variants
+- [x] Accessibility audit and improvements
+- [x] Complete design documentation
 
 ### Future Roadmap 🚧
 
-- [ ] Button component variants
 - [ ] Form components (Input, Textarea, Select)
 - [ ] Navigation components
 - [ ] Modal/Dialog components
 - [ ] Layout components (Container, Grid)
 - [ ] Data display components (Table, List)
 - [ ] Feedback components (Toast, Alert)
-- [ ] Complete design documentation
-- [ ] Accessibility audit and improvements
 
 ## 🎨 Visual Identity
 
