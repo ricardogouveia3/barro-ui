@@ -1,8 +1,7 @@
-import type { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 
-export type CardProps = {
+export type CardProps = React.ComponentPropsWithoutRef<'div'> & {
   children: ReactNode;
-  className?: string;
   contentClassName?: string;
   containerClassName?: string;
   loading?: boolean;

@@ -4,6 +4,11 @@ import { motion } from 'framer-motion';
 import { animatedBorderMotionProps } from '../../layout/Animation.tsx';
 import { cn } from '../../utils/cn.ts';
 import { useAnimatedBorder } from '../../hooks/useAnimatedBorder.ts';
+import { variants } from '../../utils/variants.ts';
+
+const cardVariants = variants(
+  'default-border relative overflow-hidden rounded-lg p-px transition-all duration-300 ease-in-out',
+);
 
 export default function Card({
   children,
@@ -12,6 +17,7 @@ export default function Card({
   containerClassName = 'flex flex-col',
   loading = false,
   animatedBorder = true,
+  ...props
 }: Readonly<CardProps>) {
   const { showBorder, handlers } = useAnimatedBorder({
     animated: animatedBorder,
@@ -20,13 +26,11 @@ export default function Card({
 
   return (
     <motion.div
-      className={cn(
-        'default-border relative overflow-hidden rounded-lg p-px transition-all duration-300 ease-in-out',
-        className,
-      )}
+      className={cardVariants({ className })}
       aria-label="region"
       aria-busy={loading}
       {...handlers}
+      {...props}
     >
       {showBorder && (
         <motion.div

@@ -10,18 +10,54 @@ import { getContrastColor } from '../../utils/color';
 import { NativeButtonProps } from './Button.types.ts';
 import { cn } from '../../utils/cn.ts';
 import { useAnimatedBorder } from '../../hooks/useAnimatedBorder.ts';
+import { variants } from '../../utils/variants.ts';
 
-function getRoundedClass(rounded: NativeButtonProps['rounded']) {
-  switch (rounded) {
-    case 'none':
-      return '';
-    case 'full':
-      return 'rounded-full';
-    case 'medium':
-    default:
-      return 'rounded-lg';
-  }
-}
+const buttonVariants = variants(
+  'relative overflow-hidden default-text-color flex items-center justify-center p-px text-center text-sm font-medium hover-background default-border border',
+  {
+    variants: {
+      rounded: {
+        none: '',
+        full: 'rounded-full',
+        medium: 'rounded-lg',
+      },
+      fullWidth: {
+        true: 'w-full',
+        false: 'w-fit',
+      },
+      disabled: {
+        true: 'cursor-not-allowed opacity-60',
+        false: 'cursor-pointer',
+      },
+    },
+    defaultVariants: {
+      rounded: 'medium',
+      fullWidth: 'false',
+      disabled: 'false',
+    },
+  },
+);
+
+const innerVariants = variants(
+  'overflow-hidden px-4 py-2 z-20 h-full w-full flex justify-center items-center',
+  {
+    variants: {
+      rounded: {
+        none: '',
+        full: 'rounded-full',
+        medium: 'rounded-lg',
+      },
+      disabled: {
+        true: 'default-background',
+        false: 'not-hover:above-noise-content-background hover:default-background',
+      },
+    },
+    defaultVariants: {
+      rounded: 'medium',
+      disabled: 'false',
+    },
+  },
+);
 
 function renderIconOrImage(
   icon: NativeButtonProps['icon'],
@@ -73,19 +109,6 @@ function getStyleVars(
   return undefined;
 }
 
-function getInnerClass(disabled: boolean, hoverColor: string | undefined, roundedClass: string) {
-  return cn(
-    'overflow-hidden px-4 py-2 z-20 h-full w-full flex justify-center items-center',
-    roundedClass,
-    disabled
-      ? 'default-background'
-      : cn(
-          'not-hover:above-noise-content-background hover:default-background',
-          hoverColor && 'custom-hover-bg custom-hover-text',
-        ),
-  );
-}
-
 export default function NativeButton({
   children,
   onClick,
@@ -95,6 +118,8 @@ export default function NativeButton({
   animatedBorder = false,
   hoverColor,
   fullWidth = false,
+  className,
+  ...props
 }: Readonly<NativeButtonProps>) {
   const { showBorder, handlers } = useAnimatedBorder({
     animated: animatedBorder,
@@ -107,29 +132,29 @@ export default function NativeButton({
   const isStringName =
     typeof name === 'string' && (name in HeroSolidIcons || name in HeroOutlineIcons);
 
-  const roundedClass = getRoundedClass(rounded);
   const defaultBg = '#fff';
   const defaultContrastColor = getContrastColor(defaultBg);
   const hoverContrastColor =
     hoverColor && !disabled ? getContrastColor(hoverColor) : defaultContrastColor;
-  const styleVars = getStyleVars(hoverColor, disabled, defaultContrastColor, hoverContrastColor);
+  const styleVars = getStyleVars(hoverColor, !!disabled, defaultContrastColor, hoverContrastColor);
   const iconColor = hoverColor && !disabled ? 'var(--custom-text-color)' : (icon?.color ?? '');
 
   return (
     <motion.button
       {...(!disabled && buttonLikeComponentMotionProps)}
       type="button"
-      className={cn(
-        'relative overflow-hidden default-text-color flex items-center justify-center p-px text-center text-sm font-medium hover-background default-border border',
-        roundedClass,
-        fullWidth ? 'w-full' : 'w-fit',
-        disabled ? 'cursor-not-allowed opacity-60' : 'cursor-pointer',
-      )}
+      className={buttonVariants({
+        rounded,
+        fullWidth: fullWidth ? 'true' : 'false',
+        disabled: disabled ? 'true' : 'false',
+        className,
+      })}
       onClick={disabled ? undefined : onClick}
       {...handlers}
       disabled={disabled}
       aria-disabled={disabled}
       style={styleVars}
+      {...props}
     >
       {showBorder && (
         <motion.div
@@ -141,10 +166,21 @@ export default function NativeButton({
       <div
         className={cn(
           'overflow-hidden z-10 smooth-noisy-background h-full w-full flex justify-center items-center',
-          roundedClass,
+          buttonVariants({
+            rounded,
+            className: 'border-none p-0 w-full h-full',
+          })
+            .split(' ')
+            .filter((c) => c.startsWith('rounded-'))
+            .join(' '),
         )}
       >
-        <div className={getInnerClass(disabled, hoverColor, roundedClass)}>
+        <div
+          className={cn(
+            innerVariants({ rounded, disabled: disabled ? 'true' : 'false' }),
+            hoverColor && !disabled && 'custom-hover-bg custom-hover-text',
+          )}
+        >
           {renderIconOrImage(icon, isStringName, fill, variant, iconColor, 'left')}
           {children}
           {renderIconOrImage(icon, isStringName, fill, variant, iconColor, 'right')}

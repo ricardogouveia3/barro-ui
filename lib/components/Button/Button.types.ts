@@ -2,7 +2,6 @@ import React from 'react';
 
 export type BaseButtonProps = {
   rounded?: 'none' | 'medium' | 'full';
-  disabled?: boolean;
   animatedBorder?: boolean;
   hoverColor?: string;
 };
@@ -16,26 +15,24 @@ export type ButtonIconProps = {
   position?: 'left' | 'right';
 };
 
-export type NativeButtonProps = BaseButtonProps & {
-  children: React.ReactNode;
-  onClick?: () => void;
-  icon?: ButtonIconProps;
-  fullWidth?: boolean;
-};
+export type NativeButtonProps = BaseButtonProps &
+  React.ComponentPropsWithoutRef<'button'> & {
+    icon?: ButtonIconProps;
+    fullWidth?: boolean;
+  };
 
-export type ButtonLinkProps = BaseButtonProps & {
-  children: React.ReactNode;
-  link: string;
-  onMouseEnter?: () => void;
-  onMouseLeave?: () => void;
-  icon?: ButtonIconProps;
-  fullWidth?: boolean;
-};
+export type ButtonLinkProps = BaseButtonProps &
+  React.ComponentPropsWithoutRef<'a'> & {
+    link: string;
+    icon?: ButtonIconProps;
+    fullWidth?: boolean;
+  };
 
-export type ToggleButtonProps = BaseButtonProps & {
-  onClick?: () => void;
-  icon?: Omit<ButtonIconProps, 'position'>;
-};
+export type ToggleButtonProps = BaseButtonProps &
+  Omit<React.ComponentPropsWithoutRef<'button'>, 'onClick'> & {
+    onClick?: () => void;
+    icon?: Omit<ButtonIconProps, 'position'>;
+  };
 
 export type ButtonProps =
   | ({ type: 'button' } & NativeButtonProps)
