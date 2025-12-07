@@ -51,7 +51,7 @@ export const HeroiconSolid: Story = {
   args: {
     name: 'CheckCircleIcon',
     variant: 'solid',
-    className: 'w-1 h-1 text-green-600',
+    className: 'w-6 h-6 text-green-600',
   },
 };
 
