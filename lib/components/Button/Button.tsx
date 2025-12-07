@@ -112,24 +112,47 @@ function getStyleVars(
 }
 
 /**
- * A versatile button component that supports various styles, icons, and animations.
+ * A versatile button component with support for icons, animations, and custom styling.
+ * Supports three types: native button, link, and toggle.
+ *
+ * @component
+ *
+ * @param {NativeButtonProps} props - Component props
+ * @param {React.ReactNode} props.children - Button content (text or elements)
+ * @param {Function} [props.onClick] - Click handler function
+ * @param {'none' | 'medium' | 'full'} [props.rounded='medium'] - Border radius style
+ * @param {ButtonIconProps} [props.icon] - Icon configuration (name, position, variant)
+ * @param {boolean} [props.disabled=false] - Whether the button is disabled
+ * @param {boolean} [props.animatedBorder=false] - Enable animated border effect on hover
+ * @param {HexColor} [props.hoverColor] - Custom hover background color (hex format)
+ * @param {boolean} [props.fullWidth=false] - Whether button takes full width of container
+ * @param {string} [props.className] - Additional CSS classes
+ * @param {string} [props['aria-label']] - Accessibility label (auto-generated from children if string)
+ *
+ * @returns {JSX.Element} Rendered button component
  *
  * @example
- * ```tsx
+ * // Basic button
  * <NativeButton onClick={() => console.log('clicked')}>
  *   Click me
  * </NativeButton>
- * ```
  *
  * @example
- * ```tsx
+ * // Button with icon and custom styling
  * <NativeButton
  *   icon={{ name: 'ArrowRightIcon', position: 'right' }}
  *   animatedBorder
+ *   hoverColor="#ff0000"
+ *   rounded="full"
  * >
  *   Next Step
  * </NativeButton>
- * ```
+ *
+ * @example
+ * // Disabled button
+ * <NativeButton disabled>
+ *   Disabled
+ * </NativeButton>
  */
 export default function NativeButton({
   children,

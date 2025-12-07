@@ -4,18 +4,34 @@ import { IconProps } from './Icon.types.ts';
 import { warnIf, validateMutuallyExclusive } from '../../utils/dev-warnings.ts';
 
 /**
- * Renders an icon from HeroIcons or a custom SVG component.
- * Automatically handles accessibility attributes.
+ * Renders an icon from HeroIcons library or a custom SVG component.
+ * Automatically handles accessibility attributes and supports both solid and outline variants.
+ *
+ * @component
+ *
+ * @param {IconProps} props - Component props
+ * @param {IconName} [props.name] - Name of the HeroIcon to render (e.g., 'BeakerIcon')
+ * @param {React.ComponentType} [props.icon] - Custom SVG component (mutually exclusive with name)
+ * @param {string} [props.className='w-5 h-5'] - CSS classes for sizing and styling
+ * @param {string} [props.color='currentColor'] - Icon color
+ * @param {string} [props.fill] - Fill color (overrides color)
+ * @param {'solid' | 'outline'} [props.variant='outline'] - HeroIcon variant
+ * @param {string} [props['aria-label']] - Accessibility label (required when not hidden)
+ * @param {boolean | 'true' | 'false'} [props['aria-hidden']] - Whether to hide from screen readers
+ *
+ * @returns {JSX.Element | null} Rendered icon component or null if icon not found
  *
  * @example
- * ```tsx
+ * // HeroIcon with solid variant
  * <Icon name="BeakerIcon" variant="solid" className="w-6 h-6 text-blue-500" />
- * ```
  *
  * @example
- * ```tsx
+ * // Custom SVG component
  * <Icon icon={CustomSvg} aria-label="Custom Icon" />
- * ```
+ *
+ * @example
+ * // Icon hidden from screen readers
+ * <Icon name="CheckIcon" aria-hidden />
  */
 export default function Icon({
   name,

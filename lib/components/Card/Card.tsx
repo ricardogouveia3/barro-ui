@@ -13,21 +13,43 @@ const cardVariants = variants(
 
 /**
  * A container component with optional animated borders and loading state.
+ * Provides a consistent card layout with customizable padding and styling.
+ *
+ * @component
+ *
+ * @param {CardProps} props - Component props
+ * @param {React.ReactNode} props.children - Card content
+ * @param {string} [props.className=''] - Additional CSS classes for the card container
+ * @param {string} [props.contentClassName='p-4 lg:p-6'] - CSS classes for content wrapper
+ * @param {string} [props.containerClassName='flex flex-col'] - CSS classes for inner container
+ * @param {boolean} [props.loading=false] - Whether to show loading spinner
+ * @param {boolean} [props.animatedBorder=true] - Enable animated border effect on hover
+ * @param {string} [props['aria-label']='Card'] - Accessibility label for the card region
+ *
+ * @returns {JSX.Element} Rendered card component
  *
  * @example
- * ```tsx
+ * // Basic card
  * <Card>
  *   <h2>Card Title</h2>
  *   <p>Card content goes here.</p>
  * </Card>
- * ```
  *
  * @example
- * ```tsx
+ * // Card with loading state
  * <Card loading={isLoading} animatedBorder={false}>
  *   <Content />
  * </Card>
- * ```
+ *
+ * @example
+ * // Card with custom styling
+ * <Card
+ *   className="shadow-lg"
+ *   contentClassName="p-8"
+ *   aria-label="User Profile"
+ * >
+ *   <UserProfile />
+ * </Card>
  */
 export default function Card({
   children,
