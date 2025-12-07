@@ -150,11 +150,7 @@ export default function NativeButton({
   );
 
   if (icon) {
-    validateMutuallyExclusive(
-      { src: icon.src, name: icon.name },
-      ['src', 'name'],
-      'Button',
-    );
+    validateMutuallyExclusive({ src: icon.src, name: icon.name }, ['src', 'name'], 'Button');
   }
 
   const { showBorder, handlers } = useAnimatedBorder({
@@ -176,8 +172,7 @@ export default function NativeButton({
   const iconColor = hoverColor && !disabled ? 'var(--custom-text-color)' : (icon?.color ?? '');
 
   // Determine aria-label for accessibility
-  const ariaLabel =
-    props['aria-label'] || (typeof children === 'string' ? children : undefined);
+  const ariaLabel = props['aria-label'] || (typeof children === 'string' ? children : undefined);
 
   return (
     <motion.button

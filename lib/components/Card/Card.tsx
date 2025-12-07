@@ -39,10 +39,7 @@ export default function Card({
   ...props
 }: Readonly<CardProps>) {
   // Prop validations (development only)
-  warnIf(
-    !children && !loading,
-    'Card: children should be provided when not in loading state',
-  );
+  warnIf(!children && !loading, 'Card: children should be provided when not in loading state');
 
   const { showBorder, handlers } = useAnimatedBorder({
     animated: animatedBorder,

@@ -18,9 +18,9 @@
  * ```
  */
 export function warnIf(condition: boolean, message: string): void {
-    if (process.env.NODE_ENV === 'development' && condition) {
-        console.warn(`[Barro UI] ${message}`);
-    }
+  if (process.env.NODE_ENV === 'development' && condition) {
+    console.warn(`[Barro UI] ${message}`);
+  }
 }
 
 /**
@@ -38,9 +38,9 @@ export function warnIf(condition: boolean, message: string): void {
  * ```
  */
 export function errorIf(condition: boolean, message: string): void {
-    if (process.env.NODE_ENV === 'development' && condition) {
-        console.error(`[Barro UI] ${message}`);
-    }
+  if (process.env.NODE_ENV === 'development' && condition) {
+    console.error(`[Barro UI] ${message}`);
+  }
 }
 
 /**
@@ -55,15 +55,11 @@ export function errorIf(condition: boolean, message: string): void {
  * validateRequired(href, 'href', 'TextUnderline');
  * ```
  */
-export function validateRequired(
-    value: unknown,
-    propName: string,
-    componentName: string,
-): void {
-    warnIf(
-        value === undefined || value === null,
-        `${componentName}: prop '${propName}' is required but was not provided.`,
-    );
+export function validateRequired(value: unknown, propName: string, componentName: string): void {
+  warnIf(
+    value === undefined || value === null,
+    `${componentName}: prop '${propName}' is required but was not provided.`,
+  );
 }
 
 /**
@@ -83,14 +79,16 @@ export function validateRequired(
  * ```
  */
 export function validateMutuallyExclusive(
-    props: Record<string, unknown>,
-    propNames: string[],
-    componentName: string,
+  props: Record<string, unknown>,
+  propNames: string[],
+  componentName: string,
 ): void {
-    const providedProps = propNames.filter((name) => props[name] !== undefined && props[name] !== null);
+  const providedProps = propNames.filter(
+    (name) => props[name] !== undefined && props[name] !== null,
+  );
 
-    warnIf(
-        providedProps.length > 1,
-        `${componentName}: only one of [${propNames.join(', ')}] should be provided. Found: ${providedProps.join(', ')}`,
-    );
+  warnIf(
+    providedProps.length > 1,
+    `${componentName}: only one of [${propNames.join(', ')}] should be provided. Found: ${providedProps.join(', ')}`,
+  );
 }

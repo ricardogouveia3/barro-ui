@@ -28,16 +28,9 @@ export default function Icon({
   'aria-hidden': ariaHidden,
 }: Readonly<IconProps>) {
   // Prop validations (development only)
-  validateMutuallyExclusive(
-    { name, icon },
-    ['name', 'icon'],
-    'Icon',
-  );
+  validateMutuallyExclusive({ name, icon }, ['name', 'icon'], 'Icon');
 
-  warnIf(
-    !name && !icon,
-    'Icon: either name or icon prop should be provided',
-  );
+  warnIf(!name && !icon, 'Icon: either name or icon prop should be provided');
 
   warnIf(
     ariaHidden !== true && !ariaLabel,
