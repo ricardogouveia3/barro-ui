@@ -1,6 +1,12 @@
 import { addons } from '@storybook/manager-api';
-import BarroTheme from './BarroTheme.js';
+import { themes } from '@storybook/theming';
+import BarroTheme from './BarroTheme';
 
 addons.setConfig({
   theme: BarroTheme,
+  sidebar: {
+    showRoots: true,
+    collapsedRoots: [],
+  },
+  initialActive: 'getting-started--docs',
 });

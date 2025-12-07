@@ -21,6 +21,12 @@ const preview: Preview = {
       default: 'dark',
       values: [{ name: 'dark', value: '#18181b' }],
     },
+    viewMode: 'docs',
+    options: {
+      storySort: {
+        order: ['Getting Started', 'Design Tokens', 'Components'],
+      },
+    },
   },
   globalTypes: {
     theme: {
