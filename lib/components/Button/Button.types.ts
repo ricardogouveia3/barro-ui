@@ -1,4 +1,5 @@
 import React from 'react';
+import type { HexColor, IconName } from '../../types/common.types';
 
 /**
  * Base properties shared by all button variants.
@@ -17,7 +18,7 @@ export type BaseButtonProps = {
   /**
    * Custom hover color in hex format.
    */
-  hoverColor?: string;
+  hoverColor?: HexColor;
 };
 
 /**
@@ -27,7 +28,7 @@ export type ButtonIconProps = {
   /**
    * Name of the HeroIcon to display, or a custom SVG component.
    */
-  name?: string | React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  name?: IconName | React.ComponentType<React.SVGProps<SVGSVGElement>>;
   /**
    * URL of an image to use as the icon.
    */

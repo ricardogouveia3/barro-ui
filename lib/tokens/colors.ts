@@ -29,3 +29,43 @@ export const colors = {
     black: '#000000',
   },
 } as const;
+
+/**
+ * Type for quartz color palette.
+ */
+export type QuartzColor = typeof colors.quartz;
+
+/**
+ * Type for base colors.
+ */
+export type BaseColor = typeof colors.base;
+
+/**
+ * Gets a quartz color shade with type safety.
+ * 
+ * @param shade - The shade number (50-950)
+ * @returns Hexadecimal color string
+ * 
+ * @example
+ * ```tsx
+ * getQuartzColor(500); // '#4a4a4a'
+ * ```
+ */
+export function getQuartzColor(shade: keyof QuartzColor): string {
+  return colors.quartz[shade];
+}
+
+/**
+ * Gets a base color with type safety.
+ * 
+ * @param name - The color name ('white' or 'black')
+ * @returns Hexadecimal color string
+ * 
+ * @example
+ * ```tsx
+ * getBaseColor('white'); // '#FFFFFF'
+ * ```
+ */
+export function getBaseColor(name: keyof BaseColor): string {
+  return colors.base[name];
+}

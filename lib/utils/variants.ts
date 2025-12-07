@@ -19,6 +19,29 @@ type VariantConfig<T> = {
 };
 
 /**
+ * Helper type to extract variant props from a variant function.
+ * 
+ * @example
+ * ```tsx
+ * const buttonVariants = variants('base', { ... });
+ * type ButtonVariantProps = VariantPropsOf<typeof buttonVariants>;
+ * ```
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type VariantPropsOf<T extends (...args: any) => any> = NonNullable<Parameters<T>[0]>;
+
+/**
+ * Type for compound variants with better type safety.
+ */
+export type CompoundVariant<T> = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  [K in keyof T]?: T[K] extends Record<string, any> ? keyof T[K] | Array<keyof T[K]> : never;
+} & {
+  className: string;
+};
+
+
+/**
  * Utility for creating type-safe component variants, similar to CVA (Class Variance Authority).
  * Allows defining base styles, variants, and compound variants.
  *

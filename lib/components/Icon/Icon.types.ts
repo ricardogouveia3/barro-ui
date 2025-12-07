@@ -1,12 +1,11 @@
-import * as HeroSolidIcons from '@heroicons/react/24/solid';
-import * as HeroOutlineIcons from '@heroicons/react/24/outline';
 import type { ComponentType, CSSProperties } from 'react';
+import type { IconName } from '../../types/common.types';
 
 export type IconProps = {
   /**
    * Name of the HeroIcon to display.
    */
-  name?: keyof typeof HeroSolidIcons | keyof typeof HeroOutlineIcons;
+  name?: IconName;
   /**
    * Custom SVG component to render instead of a HeroIcon.
    */
