@@ -11,6 +11,8 @@ import { NativeButtonProps } from './Button.types.ts';
 import { cn } from '../../utils/cn.ts';
 import { useAnimatedBorder } from '../../hooks/useAnimatedBorder.ts';
 import { variants } from '../../utils/variants.ts';
+import { warnIf, validateMutuallyExclusive } from '../../utils/dev-warnings.ts';
+import { isValidHexColor } from '../../utils/color-utils.ts';
 
 const buttonVariants = variants(
   'relative overflow-hidden default-text-color flex items-center justify-center p-px text-center text-sm font-medium hover-background default-border border',
@@ -141,6 +143,20 @@ export default function NativeButton({
   className,
   ...props
 }: Readonly<NativeButtonProps>) {
+  // Prop validations (development only)
+  warnIf(
+    !!hoverColor && !isValidHexColor(hoverColor),
+    'Button: hoverColor deve ser uma cor hexadecimal válida (ex: #ff0000)',
+  );
+
+  if (icon) {
+    validateMutuallyExclusive(
+      { src: icon.src, name: icon.name },
+      ['src', 'name'],
+      'Button',
+    );
+  }
+
   const { showBorder, handlers } = useAnimatedBorder({
     animated: animatedBorder,
     disabled,
@@ -159,6 +175,10 @@ export default function NativeButton({
   const styleVars = getStyleVars(hoverColor, !!disabled, defaultContrastColor, hoverContrastColor);
   const iconColor = hoverColor && !disabled ? 'var(--custom-text-color)' : (icon?.color ?? '');
 
+  // Determine aria-label for accessibility
+  const ariaLabel =
+    props['aria-label'] || (typeof children === 'string' ? children : undefined);
+
   return (
     <motion.button
       {...(!disabled && buttonLikeComponentMotionProps)}
@@ -173,6 +193,8 @@ export default function NativeButton({
       {...handlers}
       disabled={disabled}
       aria-disabled={disabled}
+      aria-label={ariaLabel}
+      tabIndex={disabled ? -1 : 0}
       style={styleVars}
       {...props}
     >

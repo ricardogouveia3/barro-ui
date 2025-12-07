@@ -5,6 +5,7 @@ import { animatedBorderMotionProps } from '../../layout/Animation.tsx';
 import { cn } from '../../utils/cn.ts';
 import { useAnimatedBorder } from '../../hooks/useAnimatedBorder.ts';
 import { variants } from '../../utils/variants.ts';
+import { warnIf } from '../../utils/dev-warnings.ts';
 
 const cardVariants = variants(
   'default-border relative overflow-hidden rounded-lg p-px transition-all duration-300 ease-in-out',
@@ -37,6 +38,12 @@ export default function Card({
   animatedBorder = true,
   ...props
 }: Readonly<CardProps>) {
+  // Prop validations (development only)
+  warnIf(
+    !children && !loading,
+    'Card: children should be provided when not in loading state',
+  );
+
   const { showBorder, handlers } = useAnimatedBorder({
     animated: animatedBorder,
     disabled: loading,
@@ -44,9 +51,11 @@ export default function Card({
 
   return (
     <motion.div
-      className={cardVariants({ className })}
-      aria-label="region"
+      role="region"
+      aria-label={props['aria-label'] || 'Card'}
       aria-busy={loading}
+      aria-live={loading ? 'polite' : undefined}
+      className={cardVariants({ className })}
       {...handlers}
       {...props}
     >

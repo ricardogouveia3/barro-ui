@@ -15,37 +15,37 @@ describe('Card', () => {
   });
 
   it('should apply custom className', () => {
-    const { container } = render(
+    render(
       <Card className="custom-card-class">
         <div>Content</div>
       </Card>,
     );
 
-    const card = container.querySelector('[aria-label="region"]');
+    const card = screen.getByRole('region');
     expect(card).toBeInTheDocument();
     expect(card).toHaveClass('custom-card-class');
   });
 
   it('should apply custom contentClassName', () => {
-    const { container } = render(
+    render(
       <Card contentClassName="p-8">
         <div>Content</div>
       </Card>,
     );
 
-    const card = container.querySelector('[aria-label="region"]');
+    const card = screen.getByRole('region');
     expect(card).toBeInTheDocument();
     expect(card).toHaveClass('default-border');
   });
 
   it('should apply custom containerClassName', () => {
-    const { container } = render(
+    render(
       <Card containerClassName="flex-row">
         <div>Content</div>
       </Card>,
     );
 
-    const card = container.querySelector('[aria-label="region"]');
+    const card = screen.getByRole('region');
     expect(card).toBeInTheDocument();
   });
 
@@ -83,26 +83,25 @@ describe('Card', () => {
   });
 
   it('should have region role and aria-label', () => {
-    const { container } = render(
+    render(
       <Card>
-        <div>Content</div>
+        <div>Test Content</div>
       </Card>,
     );
 
-    const card = container.querySelector('[aria-label="region"]');
+    const card = screen.getByRole('region', { name: 'Card' });
     expect(card).toBeInTheDocument();
-    expect(card).toHaveAttribute('aria-label', 'region');
   });
 
   it('should show animated border on hover when animatedBorder is true', async () => {
     const user = userEvent.setup();
-    const { container } = render(
+    render(
       <Card animatedBorder={true}>
         <div>Content</div>
       </Card>,
     );
 
-    const card = container.querySelector('[aria-label="region"]');
+    const card = screen.getByRole('region');
     expect(card).toBeInTheDocument();
 
     await user.hover(card as HTMLElement);
@@ -113,13 +112,13 @@ describe('Card', () => {
 
   it('should not show animated border when animatedBorder is false', async () => {
     const user = userEvent.setup();
-    const { container } = render(
+    render(
       <Card animatedBorder={false}>
         <div>Content</div>
       </Card>,
     );
 
-    const card = container.querySelector('[aria-label="region"]');
+    const card = screen.getByRole('region');
     expect(card).toBeInTheDocument();
 
     await user.hover(card as HTMLElement);
@@ -128,13 +127,13 @@ describe('Card', () => {
   });
 
   it('should use default contentClassName when not provided', () => {
-    const { container } = render(
+    render(
       <Card>
         <div>Content</div>
       </Card>,
     );
 
-    const card = container.querySelector('[aria-label="region"]');
+    const card = screen.getByRole('region');
     expect(card).toBeInTheDocument();
   });
 

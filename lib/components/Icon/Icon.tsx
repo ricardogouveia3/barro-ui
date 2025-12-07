@@ -1,6 +1,7 @@
 import * as HeroSolidIcons from '@heroicons/react/24/solid';
 import * as HeroOutlineIcons from '@heroicons/react/24/outline';
 import { IconProps } from './Icon.types.ts';
+import { warnIf, validateMutuallyExclusive } from '../../utils/dev-warnings.ts';
 
 /**
  * Renders an icon from HeroIcons or a custom SVG component.
@@ -26,6 +27,23 @@ export default function Icon({
   'aria-label': ariaLabel,
   'aria-hidden': ariaHidden,
 }: Readonly<IconProps>) {
+  // Prop validations (development only)
+  validateMutuallyExclusive(
+    { name, icon },
+    ['name', 'icon'],
+    'Icon',
+  );
+
+  warnIf(
+    !name && !icon,
+    'Icon: either name or icon prop should be provided',
+  );
+
+  warnIf(
+    ariaHidden !== true && !ariaLabel,
+    'Icon: aria-label should be provided when icon is not hidden from screen readers',
+  );
+
   const heroIcon =
     name && variant === 'solid'
       ? HeroSolidIcons[name as keyof typeof HeroSolidIcons]
