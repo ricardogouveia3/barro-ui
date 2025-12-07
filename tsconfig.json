@@ -1,15 +1,9 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ESNext"
-    ],
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "module": "ESNext",
-    "types": [
-      "vite/client"
-    ],
+    "types": ["vite/client"],
     "noEmit": true,
     "moduleResolution": "node",
     "jsx": "react-jsx",
@@ -35,20 +29,9 @@
     "noUnusedLocals": false,
     "noUnusedParameters": true,
     "paths": {
-      "framer-motion": [
-        "./node_modules/framer-motion/dist/es/index.mjs"
-      ]
+      "framer-motion": ["./node_modules/framer-motion/dist/es/index.mjs"]
     }
   },
-  "include": [
-    "./lib/**/*.ts",
-    "./lib/**/*.tsx"
-  ],
-  "exclude": [
-    "./lib/**/*.stories.*",
-    "node_modules",
-    "dist",
-    "build",
-    "storybook-static"
-  ]
+  "include": ["./lib/**/*.ts", "./lib/**/*.tsx"],
+  "exclude": ["./lib/**/*.stories.*", "node_modules", "dist", "build", "storybook-static"]
 }

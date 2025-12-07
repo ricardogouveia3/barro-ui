@@ -17,29 +17,29 @@ export type Variant = 'primary' | 'secondary' | 'outline' | 'ghost';
 
 /**
  * Polymorphic component props that allow rendering as different HTML elements.
- * 
+ *
  * @example
  * ```tsx
  * type BoxProps<E extends React.ElementType = 'div'> = PolymorphicComponentProps<E> & {
  *   padding?: string;
  * };
- * 
+ *
  * function Box<E extends React.ElementType = 'div'>({ as, ...props }: BoxProps<E>) {
  *   const Component = as || 'div';
  *   return <Component {...props} />;
  * }
- * 
+ *
  * // Usage
  * <Box as="section" padding="4" />
  * ```
  */
 export type PolymorphicComponentProps<E extends React.ElementType> = {
-    as?: E;
+  as?: E;
 } & Omit<React.ComponentPropsWithoutRef<E>, 'as'>;
 
 /**
  * Helper type to extract variant props from a variant function.
- * 
+ *
  * @example
  * ```tsx
  * const buttonVariants = variants('base', { ... });
@@ -59,16 +59,16 @@ export type HexColor = `#${string}`;
  * Type for Heroicons icon names (both solid and outline variants).
  */
 export type IconName =
-    | keyof typeof import('@heroicons/react/24/solid')
-    | keyof typeof import('@heroicons/react/24/outline');
+  | keyof typeof import('@heroicons/react/24/solid')
+  | keyof typeof import('@heroicons/react/24/outline');
 
 /**
  * RGB color representation.
  */
 export type RgbColor = {
-    r: number;
-    g: number;
-    b: number;
+  r: number;
+  g: number;
+  b: number;
 };
 
 /**

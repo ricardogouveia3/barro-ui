@@ -22,7 +22,7 @@ export type FontFamily = keyof typeof typography.fontFamily;
 
 /**
  * Helper type to get the value type of a color token.
- * 
+ *
  * @example
  * ```tsx
  * type White = ColorValue<'white'>; // '#FFFFFF'
@@ -30,7 +30,7 @@ export type FontFamily = keyof typeof typography.fontFamily;
  * ```
  */
 export type ColorValue<T extends ColorToken> = T extends keyof typeof colors.quartz
-    ? (typeof colors.quartz)[T]
-    : T extends keyof typeof colors.base
+  ? (typeof colors.quartz)[T]
+  : T extends keyof typeof colors.base
     ? (typeof colors.base)[T]
     : never;

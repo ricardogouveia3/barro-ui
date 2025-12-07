@@ -20,7 +20,7 @@ type VariantConfig<T> = {
 
 /**
  * Helper type to extract variant props from a variant function.
- * 
+ *
  * @example
  * ```tsx
  * const buttonVariants = variants('base', { ... });
@@ -39,7 +39,6 @@ export type CompoundVariant<T> = {
 } & {
   className: string;
 };
-
 
 /**
  * Utility for creating type-safe component variants, similar to CVA (Class Variance Authority).

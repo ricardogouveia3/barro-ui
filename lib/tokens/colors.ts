@@ -42,10 +42,10 @@ export type BaseColor = typeof colors.base;
 
 /**
  * Gets a quartz color shade with type safety.
- * 
+ *
  * @param shade - The shade number (50-950)
  * @returns Hexadecimal color string
- * 
+ *
  * @example
  * ```tsx
  * getQuartzColor(500); // '#4a4a4a'
@@ -57,10 +57,10 @@ export function getQuartzColor(shade: keyof QuartzColor): string {
 
 /**
  * Gets a base color with type safety.
- * 
+ *
  * @param name - The color name ('white' or 'black')
  * @returns Hexadecimal color string
- * 
+ *
  * @example
  * ```tsx
  * getBaseColor('white'); // '#FFFFFF'
