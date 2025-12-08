@@ -36,7 +36,7 @@ import { warnIf, validateMutuallyExclusive } from '../../utils/dev-warnings.ts';
 export default function Icon({
   name,
   icon,
-  className = 'w-5 h-5',
+  className = 'w-4 h-4',
   color = 'currentColor',
   fill,
   variant = 'outline',
