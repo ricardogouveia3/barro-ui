@@ -5,8 +5,7 @@ export const badgeVariants = variants(
   {
     variants: {
       variant: {
-        default:
-          'bg-transparent smooth-text-color hover:bg-stone-100 dark:hover:bg-stone-800',
+        default: 'bg-transparent smooth-text-color hover:bg-stone-100 dark:hover:bg-stone-800',
         secondary:
           'border-transparent bg-stone-100 text-stone-900 hover:bg-stone-100/80 dark:bg-stone-800 dark:text-stone-50 dark:hover:bg-stone-800/80',
         destructive:
