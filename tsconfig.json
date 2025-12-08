@@ -1,15 +1,9 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ESNext"
-    ],
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "module": "ESNext",
-    "types": [
-      "vite/client"
-    ],
+    "types": ["vite/client"],
     "noEmit": true,
     "moduleResolution": "node",
     "jsx": "react-jsx",
@@ -36,15 +30,6 @@
     "noUnusedParameters": true,
     "paths": {}
   },
-  "include": [
-    "./lib/**/*.ts",
-    "./lib/**/*.tsx"
-  ],
-  "exclude": [
-    "./lib/**/*.stories.*",
-    "node_modules",
-    "dist",
-    "build",
-    "storybook-static"
-  ]
+  "include": ["./lib/**/*.ts", "./lib/**/*.tsx"],
+  "exclude": ["./lib/**/*.stories.*", "node_modules", "dist", "build", "storybook-static"]
 }
